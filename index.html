@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌺 Hawaii Trip Overview - For Sharing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f1;
+    --card: #ffffff;
+    --text: #2a2a2a;
+    --muted: #7a6c5d;
+    --border: #e8e4dc;
+    --green: #2d5a3d;
+    --green-bg: #e8f3ed;
+    --orange: #ea580c;
+    --orange-bg: #fff4ed;
+    --blue: #0369a1;
+    --blue-bg: #e0f2fe;
+    --purple: #7c3aed;
+    --purple-bg: #f3e8ff;
+    --red: #dc2626;
+    --red-bg: #fee2e2;
+    --yellow: #ca8a04;
+    --yellow-bg: #fef9c3;
+    --teal: #0d9488;
+    --teal-bg: #ccfbf1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #fef3e2 0%, #fef9e7 50%, #e0f2fe 100%);
+    color: var(--text);
+    line-height: 1.55;
+    padding: 16px;
+    padding-bottom: 80px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  
+  header {
+    background: linear-gradient(135deg, #2d5a3d 0%, #0d9488 50%, #ea580c 100%);
+    color: white;
+    padding: 32px 28px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '🌺';
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 5em;
+    opacity: 0.15;
+  }
+  h1 { 
+    font-family: 'Nunito', sans-serif; 
+    font-size: 2.4em; 
+    margin-bottom: 8px;
+    font-weight: 900;
+  }
+  .header-sub { opacity: 0.95; font-size: 1.05em; margin-bottom: 4px; }
+  .header-dates { 
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-top: 12px;
+    backdrop-filter: blur(8px);
+  }
+
+  h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.6em;
+    margin: 32px 0 16px;
+    padding: 12px 18px;
+    background: var(--card);
+    border-left: 6px solid var(--teal);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  h2.kauai { border-left-color: var(--green); background: var(--green-bg); }
+  h2.bigisland { border-left-color: var(--orange); background: var(--orange-bg); }
+  h2.lodging { border-left-color: var(--purple); background: var(--purple-bg); }
+  h2.dining { border-left-color: var(--red); background: var(--red-bg); }
+  h2.travel { border-left-color: var(--blue); background: var(--blue-bg); }
+  h2.activities { border-left-color: var(--yellow); background: var(--yellow-bg); }
+
+  h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2em;
+    margin: 20px 0 10px;
+    color: var(--text);
+  }
+
+  .island-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--teal);
+  }
+  .island-card.kauai { border-left-color: var(--green); }
+  .island-card.bigisland { border-left-color: var(--orange); }
+
+  .vibe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .vibe-item {
+    background: var(--bg);
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .vibe-item-title {
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    font-size: 0.95em;
+  }
+  .vibe-item-desc {
+    color: var(--muted);
+    font-size: 0.85em;
+    line-height: 1.45;
+  }
+
+  .activity-row {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 16px;
+    align-items: start;
+  }
+.activity-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: #f5f3ed;
+    color: #a8a09a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .activity-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .activity-info { min-width: 0; }
+  .activity-name {
+    font-weight: 700;
+    font-size: 1em;
+    margin-bottom: 4px;
+  }
+  .activity-desc {
+    color: var(--muted);
+    font-size: 0.86em;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .activity-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 600;
+  }
+  .badge.green { background: var(--green-bg); color: var(--green); }
+  .badge.orange { background: var(--orange-bg); color: var(--orange); }
+  .badge.blue { background: var(--blue-bg); color: var(--blue); }
+  .badge.purple { background: var(--purple-bg); color: var(--purple); }
+  .badge.yellow { background: var(--yellow-bg); color: var(--yellow); }
+  .badge.red { background: var(--red-bg); color: var(--red); }
+  .badge.teal { background: var(--teal-bg); color: var(--teal); }
+  .badge.muted { background: #f5f3ed; color: var(--muted); }
+
+  .price-tag {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .price-amount {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1.15em;
+    color: var(--green);
+  }
+  .price-per {
+    color: var(--muted);
+    font-size: 0.78em;
+  }
+  .link-btn {
+    background: var(--teal);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.82em;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 6px;
+    transition: background 0.2s;
+  }
+  .link-btn:hover { background: #0a766c; }
+  .link-btn.secondary { background: var(--muted); }
+
+  .tier-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--green);
+  }
+  .tier-card.dollar2 { border-top-color: var(--orange); }
+  .tier-card.dollar3 { border-top-color: var(--purple); }
+  .tier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+  .tier-name {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2em;
+    font-weight: 800;
+  }
+  .tier-price {
+    font-weight: 700;
+    color: var(--green);
+    font-size: 1em;
+    text-align: right;
+  }
+  .tier-desc {
+    color: var(--muted);
+    font-size: 0.9em;
+    margin-bottom: 12px;
+  }
+  .tier-features {
+    list-style: none;
+    padding-left: 0;
+  }
+  .tier-features li {
+    padding: 4px 0;
+    font-size: 0.9em;
+    padding-left: 24px;
+    position: relative;
+  }
+  .tier-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: bold;
+  }
+
+  .dining-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .meal-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+  }
+  .meal-card.breakfast { border-top: 4px solid var(--yellow); }
+  .meal-card.lunch { border-top: 4px solid var(--orange); }
+  .meal-card.dinner { border-top: 4px solid var(--red); }
+  .meal-header {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1.05em;
+    margin-bottom: 10px;
+  }
+  .meal-item {
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 0.88em;
+  }
+  .meal-item:last-child { border-bottom: none; }
+  .meal-item strong { color: var(--text); }
+  .meal-item .price { color: var(--green); font-weight: 600; }
+  .meal-item .desc { color: var(--muted); font-size: 0.85em; }
+
+  .travel-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+  }
+  .travel-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 16px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .travel-row:last-child { border-bottom: none; }
+  .travel-route {
+    font-weight: 700;
+  }
+  .travel-detail {
+    color: var(--muted);
+    font-size: 0.85em;
+  }
+  .travel-price {
+    font-weight: 800;
+    color: var(--green);
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .budget-summary {
+    background: linear-gradient(135deg, var(--teal-bg), var(--green-bg));
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    border-left: 6px solid var(--green);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .budget-summary h3 {
+    margin-top: 0;
+    color: var(--green);
+  }
+  .budget-table {
+    width: 100%;
+    margin-top: 14px;
+    border-collapse: collapse;
+  }
+  .budget-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+    font-size: 0.9em;
+  }
+  .budget-table tr:last-child td {
+    border-bottom: none;
+    font-weight: 700;
+    color: var(--green);
+  }
+  .budget-table td:last-child {
+    text-align: right;
+    font-weight: 600;
+  }
+
+  .note-box {
+    background: var(--yellow-bg);
+    border-left: 4px solid var(--yellow);
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin: 18px 0;
+    font-size: 0.92em;
+  }
+  .note-box.green { background: var(--green-bg); border-left-color: var(--green); }
+  .note-box.blue { background: var(--blue-bg); border-left-color: var(--blue); }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 14px 0;
+    font-size: 0.85em;
+    color: var(--muted);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px 0;
+    color: var(--muted);
+    font-size: 0.85em;
+  }
+
+  @media (max-width: 700px) {
+    body { padding: 8px; }
+    h1 { font-size: 1.7em; }
+    h2 { font-size: 1.25em; padding: 10px 14px; }
+    .activity-row { grid-template-columns: 80px 1fr; }
+    .activity-img { width: 80px; height: 80px; font-size: 2.2em; }
+    .price-tag { grid-column: 1 / -1; text-align: left; padding-top: 6px; border-top: 1px dashed var(--border); }
+    header { padding: 22px 18px; }
+  }
+
+  .rank-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.7em;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .rank-badge.must {
+    background: linear-gradient(135deg, #fef3c7, #fde047);
+    color: #854d0e;
+    border: 1px solid #facc15;
+  }
+  .rank-badge.nice {
+    background: var(--green-bg);
+    color: var(--green);
+    border: 1px solid var(--green);
+  }
+  .rank-badge.alt {
+    background: var(--blue-bg);
+    color: var(--blue);
+    border: 1px solid #93c5fd;
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>🌺 Hawaii July 2026</h1>
+  <div class="header-sub">Trip overview for friends considering joining us</div>
+  <div class="header-sub">Big Island + Kauai · Family-friendly luxury · Adventure + chill rhythm</div>
+  <div class="header-dates">📅 July 6 - 21, 2026 · 15 nights</div>
+</header>
+
+<div class="note-box green">
+  <strong>👋 For your family of 5:</strong> Here's everything we're planning. You can join for part or all of the trip. We're flexible! All prices are estimates as of June 2026. Let us know what works for your family.
+</div>
+
+<!-- ISLAND VIBES -->
+<h2>🏝️ The Two Islands - Different Vibes</h2>
+
+<div class="island-card kauai">
+  <h3>🟢 KAUAI - "The Garden Isle" (Days 1-8)</h3>
+  <p style="margin-bottom: 14px; color: var(--muted);">
+    Lush, dramatic, slower pace. Movie-set scenery (Jurassic Park, Avatar, Pirates of the Caribbean were filmed here). Best for adventure + waterfalls. South shore (Poipu) = sunny + calm beaches.
+  </p>
+  <div class="vibe-grid">
+    <div class="vibe-item">
+      <div class="vibe-item-title">🌊 Beaches</div>
+      <div class="vibe-item-desc">Poipu Beach (calm, family-friendly), Hanalei Bay (north shore beauty)</div>
+    </div>
+    <div class="vibe-item">
+      <div class="vibe-item-title">🏞️ Landscapes</div>
+      <div class="vibe-item-desc">Na Pali Coast cliffs, Waimea Canyon "Grand Canyon of Pacific"</div>
+    </div>
+    <div class="vibe-item">
+      <div class="vibe-item-title">🛶 Best for</div>
+      <div class="vibe-item-desc">Kayaking, snorkeling, helicopter tours, waterfall hikes</div>
+    </div>
+    <div class="vibe-item">
+      <div class="vibe-item-title">🌧️ Weather</div>
+      <div class="vibe-item-desc">July = warm + sunny in Poipu (south); occasional north shore showers</div>
+    </div>
+    <div class="vibe-item">
+      <div class="vibe-item-title">🍽️ Food scene</div>
+      <div class="vibe-item-desc">Farm-to-table, fresh fish, Hanalei tropical eats, James Beard chefs</div>
+    </div>
+    <div class="vibe-item">
+      <div class="vibe-item-title">⏰ Pace</div>
+      <div class="vibe-item-desc">Slow, intimate, fewer tourists, "old Hawaii" vibe</div>
+    </div>
+  </div>
+</div>
+
+<div class="island-card bigisland">
+  <h3>🟠 BIG ISLAND - "Hawaii's Wild Side" (Days 9-15)</h3>
+  <p style="margin-bottom: 14px; color: var(--muted);">
+    Vast, geological, raw. Active volcano (Kīlauea is erupting NOW), world's tallest mountain (Mauna Kea from base), 8 of 13 climate zones. Best for adventure + variety.
+  </p>
+  <div class="vibe-grid">
+    <div class="vibe-item">
+      <div class="vibe-item-title">🌋 Adventure</div>
+      <div class="vibe-item-desc">Active volcano, lava glow at night, walk crater floor</div>
+    </div>
+    <div class="vibe-item">
+      <div class="vibe-item-title">🌌 Stargazing</div>
+      <div class="vibe-item-desc">Mauna Kea = #1 stargazing on Earth, 9,200ft visitor center FREE</div>
+    </div>
+    <div class="vibe-item">
+      <div class="vibe-item-title">🐟 Marine life</div>
+      <div class="vibe-item-desc">Manta ray night snorkel (96% success rate!), sea turtles, coral reefs</div>
+    </div>
+    <div class="vibe-item">
+      <div class="vibe-item-title">🏖️ Beaches</div>
+      <div class="vibe-item-desc">White, black, green sand beaches (Punaluʻu, Mahana, Hapuna)</div>
+    </div>
+    <div class="vibe-item">
+      <div class="vibe-item-title">☕ Food + Culture</div>
+      <div class="vibe-item-desc">Kona coffee farms, vanilla farm, cacao, Loco Moco birthplace (Hilo)</div>
+    </div>
+    <div class="vibe-item">
+      <div class="vibe-item-title">⏰ Pace</div>
+      <div class="vibe-item-desc">Spread out, lots of driving between regions, more variety</div>
+    </div>
+  </div>
+</div>
+
+<!-- TRAVEL/FLIGHTS -->
+<h2 class="travel">✈️ Travel & Flights</h2>
+
+<div class="travel-card">
+  <h3 style="margin-top: 0;">Specific Flights We're Looking At (from MCI)</h3>
+  
+  <div class="travel-row">
+    <div>
+      <div class="travel-route">✈️ MCI → LIH (Kauai)</div>
+      <div class="travel-detail"><strong>Mon July 6, 2026</strong> · United Airlines · 9:10 AM → 3:37 PM HST · 1 stop DEN · 11h 27m</div>
+      <div class="travel-detail" style="color: var(--muted); font-size: 0.82em;">Cheaper at 6 AM ($349) but earlier wake-up</div>
+      <a href="https://www.google.com/travel/flights?q=MCI%20to%20LIH%20on%202026-07-06%20one-way%201%20passenger" target="_blank" class="link-btn" style="margin-top: 8px;">🔍 Compare flights</a>
+      <a href="https://www.united.com" target="_blank" class="link-btn secondary" style="margin-top: 8px;">✈️ United</a>
+    </div>
+    <div class="travel-detail">Economy</div>
+    <div class="travel-price">$392/person</div>
+  </div>
+
+  <div class="travel-row">
+    <div>
+      <div class="travel-route">✈️ LIH → ITO (Kauai → Hilo, interisland)</div>
+      <div class="travel-detail"><strong>Mon July 13, 2026</strong> · Southwest · 3:45 PM → 6:10 PM HST · 1 stop HNL · 2h 25m</div>
+      <a href="https://www.southwest.com" target="_blank" class="link-btn" style="margin-top: 8px;">✈️ Southwest</a>
+      <a href="https://www.hawaiianairlines.com" target="_blank" class="link-btn secondary" style="margin-top: 8px;">✈️ Hawaiian Air</a>
+    </div>
+    <div class="travel-detail">Economy</div>
+    <div class="travel-price">$75/person</div>
+  </div>
+
+  <div class="travel-row">
+    <div>
+      <div class="travel-route">✈️ KOA → MCI (Home)</div>
+      <div class="travel-detail"><strong>Tue July 21, 2026</strong> · United Airlines · 8:00 PM HST → 10:50 AM CDT next day · 1 stop DEN · overnight red-eye</div>
+      <a href="https://www.google.com/travel/flights?q=KOA%20to%20MCI%20on%202026-07-21%20one-way%201%20passenger" target="_blank" class="link-btn" style="margin-top: 8px;">🔍 Compare flights</a>
+      <a href="https://www.united.com" target="_blank" class="link-btn secondary" style="margin-top: 8px;">✈️ United</a>
+    </div>
+    <div class="travel-detail">Economy</div>
+    <div class="travel-price">$259/person</div>
+  </div>
+
+  <div class="travel-row" style="font-weight: 800; background: var(--green-bg); padding: 12px; border-radius: 8px; margin-top: 12px;">
+    <div>TOTAL FLIGHTS (3 segments)</div>
+    <div></div>
+    <div class="travel-price">~$725/person</div>
+  </div>
+  
+  <div style="margin-top: 14px; padding: 10px 14px; background: var(--yellow-bg); border-radius: 8px; font-size: 0.88em; border-left: 4px solid var(--yellow);">
+    💡 <strong>Note:</strong> These specific flight times have availability as of June 2026. Prices may shift. If you want to fly together, book within a few days of us so we're on the same flights.
+  </div>
+</div>
+
+<div class="travel-card">
+  <h3 style="margin-top: 0;">🚗 Rental Cars (Required - 2 islands)</h3>
+  <p style="color: var(--muted); font-size: 0.88em; margin-bottom: 12px;"><em>Family of 5 + luggage + snorkel gear = recommend FULL-SIZE SUV</em></p>
+  
+  <div class="travel-row">
+    <div>
+      <div class="travel-route">🔑 Kauai (Lihue Airport, 7 days)</div>
+      <div class="travel-detail">Full-size SUV (Toyota Highlander, Honda Pilot, or similar) - 5 passengers + cargo space</div>
+      <div class="travel-detail" style="color: var(--muted); font-size: 0.82em;">Live pricing as of June 2026 · Taxes/fees included · Intermediate SUVs from $506 if size flexible</div>
+      <a href="https://www.kayak.com/cars/Lihue-Airport,LIH/2026-07-06/2026-07-13?carClasses=fullsizesuv&sort=price_a" target="_blank" class="link-btn" style="margin-top: 8px;">🔍 Compare on Kayak</a>
+      <a href="https://www.costcotravel.com/Rental-Cars" target="_blank" class="link-btn secondary" style="margin-top: 8px;">🔍 Costco Travel</a>
+    </div>
+    <div class="travel-detail">7 days</div>
+    <div class="travel-price">~$650-800</div>
+  </div>
+  
+  <div class="travel-row">
+    <div>
+      <div class="travel-route">🔑 Big Island (Kona Airport, 8 days)</div>
+      <div class="travel-detail">Full-size SUV (Toyota Highlander, Honda Pilot, or similar) - 5 passengers + cargo space</div>
+      <div class="travel-detail" style="color: var(--muted); font-size: 0.82em;">Live pricing as of June 2026 · Taxes/fees included · Full-size sedans from $498 if size flexible</div>
+      <a href="https://www.kayak.com/cars/Kona,KOA/2026-07-13/2026-07-21?carClasses=fullsizesuv&sort=price_a" target="_blank" class="link-btn" style="margin-top: 8px;">🔍 Compare on Kayak</a>
+      <a href="https://www.costcotravel.com/Rental-Cars" target="_blank" class="link-btn secondary" style="margin-top: 8px;">🔍 Costco Travel</a>
+    </div>
+    <div class="travel-detail">8 days</div>
+    <div class="travel-price">~$700-900</div>
+  </div>
+  
+  <div class="travel-row" style="font-weight: 800; background: var(--green-bg); padding: 12px; border-radius: 8px; margin-top: 12px;">
+    <div>TOTAL FULL-SIZE SUV (both islands, per family)</div>
+    <div></div>
+    <div class="travel-price">~$1,350-1,700</div>
+  </div>
+  
+  <div style="margin-top: 10px; padding: 8px 12px; background: var(--yellow-bg); border-radius: 8px; font-size: 0.85em;">
+    ⚠️ <strong>Tip:</strong> Costco Travel often bundles full-size SUVs at ~$900-1,100/family, saving $400-600 vs booking direct. Worth comparing!
+  </div>
+  
+  <div style="margin-top: 14px; padding: 10px 14px; background: var(--blue-bg); border-radius: 8px; font-size: 0.88em; border-left: 4px solid var(--blue);">
+    💡 <strong>Costco Travel Tip:</strong> Bundling cars with hotel + flights via Costco often saves $300-500 vs booking cars separately. Costco rates include taxes/fees.
+  </div>
+</div>
+
+<div class="note-box blue">
+  💡 <strong>Money-saving tip:</strong> Costco Travel offers a 2-island bundle that includes flights + cars + hotels for ~$17K-26K family of 5 (depending on hotel tier). Includes Costco Cash Card back ($600-1,000). Worth checking!
+</div>
+
+<!-- LODGING -->
+<h2 class="lodging">🏨 Lodging Tiers</h2>
+
+<div class="legend">
+  <div class="legend-item"><span class="legend-dot" style="background: var(--green);"></span>$ Budget-friendly</div>
+  <div class="legend-item"><span class="legend-dot" style="background: var(--orange);"></span>$$ Mid-range comfort</div>
+  <div class="legend-item"><span class="legend-dot" style="background: var(--purple);"></span>$$$ Premium luxury</div>
+</div>
+
+<h3>🟢 Kauai Lodging Options</h3>
+
+<div class="tier-card">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">$ Aston Islander on the Beach</div>
+      <div class="tier-desc">Kapaa east coast · Older but oceanfront · Family-friendly basic</div>
+    </div>
+    <div class="tier-price">~$250/night<br>$1,750/week</div>
+  </div>
+  <ul class="tier-features">
+    <li>2 double beds standard rooms</li>
+    <li>Pool, beach access</li>
+    <li>Budget choice</li>
+  </ul>
+  <a href="https://www.aquaaston.com/hotels/aston-islander-on-the-beach" target="_blank" class="link-btn">🌐 Check rates</a>
+</div>
+
+<div class="tier-card dollar2">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">$$ Koloa Landing Resort at Poipu (Autograph Collection)</div>
+      <div class="tier-desc">Poipu south shore · 25 acres · 350K-gal saltwater pool · 4.7/5 stars (2,828 reviews)</div>
+    </div>
+    <div class="tier-price">~$700/night<br>$4,900/week</div>
+  </div>
+  <ul class="tier-features">
+    <li>2-bedroom villas, 1,400 sq ft</li>
+    <li>King + Queen + Pull-out sofa (sleeps 5)</li>
+    <li>Multiple pools + lagoons</li>
+    <li>Walk to Poipu Beach</li>
+    <li>Sam Choy's restaurant on-site</li>
+  </ul>
+  <a href="https://www.marriott.com/en-us/hotels/lihak-koloa-landing-resort-at-poipu-autograph-collection/" target="_blank" class="link-btn">🌐 Check rates</a>
+</div>
+
+<div class="tier-card dollar3">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">$$$ Timbers Kauai Ocean Club & Residences</div>
+      <div class="tier-desc">Lihue 5-star · 450-acre Hokuala resort · Boutique luxury residences · 4.8/5 (newer, top-rated)</div>
+    </div>
+    <div class="tier-price">~$1,500/night<br>$10,500/week</div>
+  </div>
+  <ul class="tier-features">
+    <li>3-bedroom Maliula or Kaiholo signature residence (sleeps 6-8)</li>
+    <li>2,378-3,422 sq ft (everyone gets own bedroom)</li>
+    <li>2 outdoor pools + children's pool + golf course</li>
+    <li>Hualani's restaurant (oceanfront farm-to-table)</li>
+    <li>Children's Club (Timbers Tykes!)</li>
+    <li>5 min from Lihue Airport</li>
+  </ul>
+  <a href="https://www.timberskauai.com" target="_blank" class="link-btn">🌐 Check rates</a>
+</div>
+
+<div class="note-box green" style="margin: 14px 0;">
+  ⭐ <strong>What we're considering for Kauai:</strong> <strong>Koloa Landing Resort at Poipu (Marriott Autograph Collection)</strong> - 2-bedroom villa, sleeps 5. Sunny Poipu south shore. Walking distance to beach + saltwater pool + multiple lagoon pools. Mid-tier value.
+</div>
+
+<h3>🟠 Big Island Lodging Options</h3>
+
+<div class="tier-card">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">$ Pacific 19 Kona</div>
+      <div class="tier-desc">Kailua-Kona town · Newly renovated basic · 3 stars (3.9/5)</div>
+    </div>
+    <div class="tier-price">~$250/night<br>$2,000/week</div>
+  </div>
+  <ul class="tier-features">
+    <li>Standard rooms, 2 double beds</li>
+    <li>Town location (drive to beaches)</li>
+    <li>Budget choice</li>
+  </ul>
+</div>
+
+<div class="tier-card dollar2">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">$$ Fairway Villas Waikoloa by Outrigger</div>
+      <div class="tier-desc">Waikoloa Resort area · Golf community condos · Kitchen + laundry · 4.3/5 (750 reviews)</div>
+    </div>
+    <div class="tier-price">~$450/night<br>$3,600/week</div>
+  </div>
+  <ul class="tier-features">
+    <li>2-bedroom golf-view villas, 1,100 sq ft</li>
+    <li>King + 2 twins/queen + sofa bed (sleeps 5-6)</li>
+    <li>Full kitchen, washer/dryer</li>
+    <li>Walk to A-Bay beach (10 min)</li>
+    <li>Near Kings' Shops (restaurants/Merriman's)</li>
+    <li>Pool, hot tub</li>
+  </ul>
+  <a href="https://www.outrigger.com/hotels-resorts/hawaiian-islands/hawaii-island/fairway-villas-waikoloa-by-outrigger" target="_blank" class="link-btn">🌐 Check rates</a>
+</div>
+
+<div class="tier-card dollar3">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">$$$ Hualalai Villas & Homes (Four Seasons access)</div>
+      <div class="tier-desc">Four Seasons Hualalai resort · True luxury · 4.9/5 (curated)</div>
+    </div>
+    <div class="tier-price">~$2,625/night<br>$15,750/week (6 nights)</div>
+  </div>
+  <ul class="tier-features">
+    <li>3-bedroom villas, 2,646+ sq ft</li>
+    <li>Full Four Seasons resort access (pools, beaches, restaurants)</li>
+    <li>FREE Kids' Club ("Kids for All Seasons")</li>
+    <li>King's Pond - swim with tropical fish & rays</li>
+    <li>Multiple pools, calmest beach on Big Island</li>
+    <li>Spa Without Walls (outdoor)</li>
+    <li>Full kitchen + daily housekeeping</li>
+  </ul>
+  <a href="https://www.hualalaivillasandhomes.com" target="_blank" class="link-btn">🌐 Check rates</a>
+</div>
+
+<div class="note-box green" style="margin: 14px 0;">
+  ⭐ <strong>What we're considering for Big Island:</strong> <strong>Fairway Villas Waikoloa by Outrigger</strong> - 2-bedroom golf-view villa, sleeps 5-6. Kohala Coast resort area, walking distance to A-Bay beach. Kitchen + laundry. Mid-tier value.
+</div>
+
+<!-- VOLCANO STOPOVER -->
+<h2 class="lodging" style="border-left-color: var(--red);">🌋 Volcano Stopover (Tue July 14 - 1 night)</h2>
+
+<p style="margin-bottom: 16px; color: var(--muted); padding: 0 8px;">
+  Between Kauai and Big Island weeks, we're spending one night near Hawaii Volcanoes National Park to see lava glow + active eruption (Kilauea is currently erupting!). Here are options for that night:
+</p>
+
+<div class="tier-card">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">$ Volcano Inn</div>
+      <div class="tier-desc">Volcano Village · 1.5 mi from park · Family-friendly value</div>
+    </div>
+    <div class="tier-price">~$150/night<br>$300 for 2 rooms</div>
+  </div>
+  <ul class="tier-features">
+    <li>Walking distance to Volcano Village restaurants</li>
+    <li>Multiple room types (queens, kings)</li>
+    <li>Simple, clean, well-reviewed</li>
+  </ul>
+  <a href="https://volcanoinn.com" target="_blank" class="link-btn">🌐 Book</a>
+</div>
+
+<div class="tier-card dollar2">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">$$ Aloha Junction Bed & Breakfast</div>
+      <div class="tier-desc">Volcano Village · Walking distance to park entrance · Breakfast included</div>
+    </div>
+    <div class="tier-price">~$175/night<br>$350 for 2 rooms</div>
+  </div>
+  <ul class="tier-features">
+    <li>Hot breakfast included</li>
+    <li>Walk to park entrance!</li>
+    <li>Family-friendly rooms</li>
+    <li>Charming B&B feel</li>
+  </ul>
+  <a href="https://alohajunction.com" target="_blank" class="link-btn">🌐 Book</a>
+</div>
+
+<div class="tier-card dollar2">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">$$ Chalet Kilāuea (Inn at Volcano)</div>
+      <div class="tier-desc">Volcano Village · Cozy rainforest lodge · Quiet atmosphere</div>
+    </div>
+    <div class="tier-price">~$200/night<br>$400 for 2 rooms</div>
+  </div>
+  <ul class="tier-features">
+    <li>Surrounded by rainforest</li>
+    <li>Lodge atmosphere</li>
+    <li>Within Volcano Village</li>
+  </ul>
+  <a href="https://chaletkilauea.com" target="_blank" class="link-btn">🌐 Book</a>
+</div>
+
+<div class="tier-card dollar3">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">$$$ Volcano House Lodge (if available)</div>
+      <div class="tier-desc">INSIDE the park · Crater views · Iconic but often sold out</div>
+    </div>
+    <div class="tier-price">~$350/night<br>$700 for 2 rooms</div>
+  </div>
+  <ul class="tier-features">
+    <li>Only hotel INSIDE the national park</li>
+    <li>Crater views from rooms</li>
+    <li>Historic lodge built 1846</li>
+    <li>Often sold out - check early</li>
+  </ul>
+  <a href="https://hawaiivolcanohouse.com" target="_blank" class="link-btn">🌐 Check availability</a>
+</div>
+
+<div class="note-box" style="background: var(--red-bg); border-left-color: var(--red); margin-top: 18px;">
+  💡 <strong>Heads up:</strong> Volcano Village has limited hotel rooms. <strong>Book early!</strong> Most properties have under 20 rooms total. Alternatives: SCP Hilo Hotel or Grand Naniloa Hilo (45 min drive to volcano) if Volcano Village is sold out.
+</div>
+
+<!-- ACTIVITIES -->
+<h2 class="activities">🎯 Activities & Excursions</h2>
+
+<div class="note-box" style="background: linear-gradient(135deg, #fef9c3, #e8f3ed, #e0f2fe); border-left-color: var(--yellow);">
+  <strong>📊 How we ranked these:</strong>
+  <div style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9em;">
+    <div><span class="rank-badge must">⭐ MUST DO</span> Bucket-list, can't skip on a Hawaii trip</div>
+    <div><span class="rank-badge nice">👍 NICE TO DO</span> Memorable, but optional if short on time</div>
+    <div><span class="rank-badge alt">🔄 ALTERNATIVE</span> Skip if budget tight, use as backup</div>
+  </div>
+  <div style="margin-top: 10px; font-size: 0.88em; color: var(--muted);">
+    💡 <em>For a $35K budget family of 5: Do all MUST DOs + pick 2-3 NICE TO DOs. Skip Alternatives unless you're staying longer.</em>
+  </div>
+</div>
+
+<h3>🟢 KAUAI Activities</h3>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/napali-catamaran.png?v=3" alt="Na Pali Coast" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🛥️</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🛥️ Na Pali Coast Catamaran Tour</div>
+    <span class="rank-badge must">⭐ MUST DO</span>
+    <div class="activity-desc">Full-day boat tour along 17 miles of towering cliffs, snorkeling, dolphins. The bucket-list Kauai experience.</div>
+    <div class="activity-meta">
+      <span class="badge orange">5-7 hours</span>
+      <span class="badge green">All ages</span>
+      <span class="badge blue">Morning</span>
+    </div>
+    <a href="https://www.kauaiboats.com" target="_blank" class="link-btn">🌐 Blue Dolphin</a>
+    <a href="https://holoholocharters.com" target="_blank" class="link-btn secondary">🌐 Holo Holo</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$180/pp</div>
+    <div class="price-per">~$900/family</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/helicopter.jpg?v=3" alt="Helicopter tour" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🚁</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🚁 Blue Hawaiian Helicopter Tour</div>
+    <span class="rank-badge must">⭐ MUST DO</span>
+    <div class="activity-desc">Doors-on (safer for kids), 60-min tour over Na Pali Coast + Jurassic Park waterfalls (Manawaiopuna Falls!) + Mt. Waialeale.</div>
+    <div class="activity-meta">
+      <span class="badge orange">2-3 hours</span>
+      <span class="badge green">Ages 5+ welcome</span>
+      <span class="badge purple">Bucket list</span>
+    </div>
+    <a href="https://www.bluehawaiian.com/kauai" target="_blank" class="link-btn">🌐 Book</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$330/pp</div>
+    <div class="price-per">~$1,650/family</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/wailua.jpg?v=4" alt="Wailua waterfall" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🚶</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🚶 Wailua River Kayak + Secret Falls</div>
+    <span class="rank-badge nice">👍 NICE TO DO</span>
+    <div class="activity-desc">Kayak sacred Wailua River 2 mi + hike 1 mi to Uluwehi (Secret) Falls + swim under 100-ft waterfall.</div>
+    <div class="activity-meta">
+      <span class="badge orange">4-5 hours</span>
+      <span class="badge green">Ages 5+</span>
+      <span class="badge teal">Adventure + swim</span>
+    </div>
+    <a href="https://kauaikayaktour.com" target="_blank" class="link-btn">🌐 Kayak Adventures</a>
+    <a href="https://aliikayaks.com" target="_blank" class="link-btn secondary">🌐 Ali'i Kayaks</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$120/pp</div>
+    <div class="price-per">~$600/family</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/tubing.jpg?v=3" alt="Jungle tubing" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🛟</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🛟 Kauai Backcountry Mountain Tubing</div>
+    <span class="rank-badge nice">👍 NICE TO DO</span>
+    <div class="activity-desc">Tube through old plantation irrigation tunnels (underground!). KIDS FAVORITE.</div>
+    <div class="activity-meta">
+      <span class="badge orange">4-5 hours</span>
+      <span class="badge green">Ages 5+ (43" min)</span>
+      <span class="badge yellow">Easy adventure</span>
+    </div>
+    <a href="https://kauaibackcountry.com" target="_blank" class="link-btn">🌐 Book</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$140/pp</div>
+    <div class="price-per">~$700/family</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/outrigger.jpg?v=4" alt="Outrigger canoe" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🚶</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🚶 Kauai Beach Boys Outrigger Canoe Surfing</div>
+    <span class="rank-badge alt">🔄 ALTERNATIVE</span>
+    <div class="activity-desc">Surf real waves in a 6-person Hawaiian outrigger canoe. Whole family in one boat!</div>
+    <div class="activity-meta">
+      <span class="badge orange">1 hour</span>
+      <span class="badge green">All ages</span>
+      <span class="badge teal">Authentic culture</span>
+    </div>
+    <a href="https://kauaibeachboys.com" target="_blank" class="link-btn">🌐 Book</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$72/pp</div>
+    <div class="price-per">~$360/family</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/chocolate.jpg?v=4" alt="Cacao" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🌱</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🌱 Lydgate Farms Chocolate Farm Tour</div>
+    <span class="rank-badge alt">🔄 ALTERNATIVE</span>
+    <div class="activity-desc">5th-gen family farm. Award-winning Hawaiian cacao. Chocolate tasting (kids love it).</div>
+    <div class="activity-meta">
+      <span class="badge orange">2.5 hours</span>
+      <span class="badge green">All ages</span>
+      <span class="badge yellow">Educational</span>
+    </div>
+    <a href="https://lydgatefarms.com" target="_blank" class="link-btn">🌐 Book</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$99/adult $50/kid</div>
+    <div class="price-per">~$350/family</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/waimea.jpg?v=4" alt="Waimea Canyon" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🏞️</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🏞️ Waimea Canyon (self-drive)</div>
+    <span class="rank-badge nice">👍 NICE TO DO</span>
+    <div class="activity-desc">"Grand Canyon of the Pacific" - 14 mi long, 1 mi wide, multiple lookouts. Add a hike or just drive.</div>
+    <div class="activity-meta">
+      <span class="badge orange">Half-day</span>
+      <span class="badge green">Any age</span>
+      <span class="badge muted">$10 parking</span>
+    </div>
+    <a href="https://dlnr.hawaii.gov/dsp/parks/kauai/waimea-canyon-state-park/" target="_blank" class="link-btn">🌐 Info</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">FREE</div>
+    <div class="price-per">$10 parking</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/luau.jpg?v=4" alt="Hula" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🌺</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🌺 Smith Family Garden Luau (Kauai's most authentic)</div>
+    <span class="rank-badge must">⭐ MUST DO</span>
+    <div class="activity-desc">5 generations of Hawaiian family hosting. Cultural feast + Polynesian dance show in a tropical garden.</div>
+    <div class="activity-meta">
+      <span class="badge orange">4 hours</span>
+      <span class="badge green">All ages</span>
+      <span class="badge purple">Cultural</span>
+    </div>
+    <a href="https://smithskauai.com" target="_blank" class="link-btn">🌐 Book</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$150/adult $85/kid</div>
+    <div class="price-per">~$700/family</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/fern-grotto.jpg?v=3" alt="Fern Grotto" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🛥️</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🛥️ Smith Family Wailua River + Fern Grotto</div>
+    <span class="rank-badge alt">🔄 ALTERNATIVE</span>
+    <div class="activity-desc">Sacred Hawaiian river cruise to Fern Grotto (where royalty held weddings). Often combo with luau.</div>
+    <div class="activity-meta">
+      <span class="badge orange">1.5 hours</span>
+      <span class="badge green">All ages</span>
+      <span class="badge yellow">Easy</span>
+    </div>
+    <a href="https://smithskauai.com/fern-grotto" target="_blank" class="link-btn">🌐 Book</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$30/adult $15/kid</div>
+    <div class="price-per">~$105/family</div>
+  </div>
+</div>
+
+<h3>🟠 BIG ISLAND Activities</h3>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/manta.jpg?v=4" alt="Manta ray" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🦑</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🦑 Anelakai Adventures Manta Ray Outrigger Snorkel</div>
+    <span class="rank-badge must">⭐ MUST DO</span>
+    <div class="activity-desc">Outrigger canoe + night snorkel with manta rays (96% success rate, wingspan 8-16 ft!). Once-in-a-lifetime.</div>
+    <div class="activity-meta">
+      <span class="badge orange">3 hours</span>
+      <span class="badge green">Ages 2+</span>
+      <span class="badge purple">Bucket list</span>
+    </div>
+    <a href="https://anelakai.com" target="_blank" class="link-btn">🌐 Book</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$170/pp</div>
+    <div class="price-per">~$850/family</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/volcano.jpg?v=4" alt="Lava flow" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🌋</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🌋 Hawaii Volcanoes National Park</div>
+    <span class="rank-badge must">⭐ MUST DO</span>
+    <div class="activity-desc">ACTIVELY ERUPTING NOW. Walk crater floor, see lava glow at night, hike through rainforest, drive through lava fields.</div>
+    <div class="activity-meta">
+      <span class="badge orange">1-2 full days</span>
+      <span class="badge green">All ages</span>
+      <span class="badge purple">Bucket list</span>
+    </div>
+    <a href="https://www.nps.gov/havo" target="_blank" class="link-btn">🌐 Info</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$55/vehicle</div>
+    <div class="price-per">(Tri-Park Pass)</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/stargazing.jpg?v=3" alt="Mauna Kea" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🌌</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🌌 Mauna Kea Visitor Center Stargazing (FREE!)</div>
+    <span class="rank-badge must">⭐ MUST DO</span>
+    <div class="activity-desc">Self-drive to 9,200 ft. Free public program with telescopes, volunteer astronomers. Best stargazing on Earth.</div>
+    <div class="activity-meta">
+      <span class="badge orange">5-6 hours</span>
+      <span class="badge green">All ages (kids OK at VC level)</span>
+      <span class="badge purple">Bucket list</span>
+    </div>
+    <a href="https://hilo.hawaii.edu/maunakea/visitor-information/stargazing.php" target="_blank" class="link-btn">🌐 Info</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">FREE</div>
+    <div class="price-per">+gas</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/vanilla.jpg?v=4" alt="Vanilla flower" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🍦</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🍦 Hawaiian Vanilla Company Luncheon</div>
+    <span class="rank-badge nice">👍 NICE TO DO</span>
+    <div class="activity-desc">First US commercial vanilla farm. Tour + 3-course vanilla-inspired gourmet lunch. Legendary milkshakes.</div>
+    <div class="activity-meta">
+      <span class="badge orange">3 hours</span>
+      <span class="badge green">All ages</span>
+      <span class="badge yellow">Unique</span>
+    </div>
+    <a href="https://hawaiianvanilla.com" target="_blank" class="link-btn">🌐 Book</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$75/pp</div>
+    <div class="price-per">~$350/family</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/puuhonua.jpg?v=4" alt="Hawaiian temple" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🗿</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🗿 Pu'uhonua o Hōnaunau (Place of Refuge)</div>
+    <span class="rank-badge alt">🔄 ALTERNATIVE</span>
+    <div class="activity-desc">Hawaii's Pompeii. 400+ year sacred site, reconstructed temples, giant tiki gods. Right next to Two-Step snorkeling.</div>
+    <div class="activity-meta">
+      <span class="badge orange">2-3 hours</span>
+      <span class="badge green">All ages</span>
+      <span class="badge muted">Cultural</span>
+    </div>
+    <a href="https://www.nps.gov/puho" target="_blank" class="link-btn">🌐 Info</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$25/car</div>
+    <div class="price-per">(or Tri-Park Pass)</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/imiloa.jpg?v=3" alt="Observatory" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🔭</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🔭 Imiloa Astronomy Center (Hilo)</div>
+    <span class="rank-badge alt">🔄 ALTERNATIVE</span>
+    <div class="activity-desc">Best museum for families. Planetarium + Hawaiian voyaging history + telescopes. Perfect Mauna Kea prep.</div>
+    <div class="activity-meta">
+      <span class="badge orange">2-3 hours</span>
+      <span class="badge green">All ages</span>
+      <span class="badge yellow">Educational</span>
+    </div>
+    <a href="https://imiloahawaii.org" target="_blank" class="link-btn">🌐 Info</a>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$19/adult $12/kid</div>
+    <div class="price-per">~$75/family</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/akaka.jpg?v=4" alt="Akaka Falls" onerror="this.style.display='none';this.parentElement.innerHTML='<span>💧</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">💧 Akaka Falls State Park</div>
+    <span class="rank-badge nice">👍 NICE TO DO</span>
+    <div class="activity-desc">442-ft freefall waterfall. Easy 15-min paved loop walk. Perfect quick stop.</div>
+    <div class="activity-meta">
+      <span class="badge orange">1 hour</span>
+      <span class="badge green">All ages</span>
+      <span class="badge yellow">Easy</span>
+    </div>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">$10/car</div>
+    <div class="price-per">State park</div>
+  </div>
+</div>
+
+<div class="activity-row">
+  <div class="activity-img"><img src="hawaii-images/snorkel.jpg?v=3" alt="Honaunau Bay" onerror="this.style.display='none';this.parentElement.innerHTML='<span>🐠</span>';"></div>
+  <div class="activity-info">
+    <div class="activity-name">🐠 Two-Step Snorkel at Honaunau Bay</div>
+    <span class="rank-badge nice">👍 NICE TO DO</span>
+    <div class="activity-desc">Best snorkel spot on Big Island. Dolphins, tropical fish, sea turtles. Right next to Pu'uhonua.</div>
+    <div class="activity-meta">
+      <span class="badge orange">2-3 hours</span>
+      <span class="badge green">Intermediate swimmers</span>
+      <span class="badge teal">Free</span>
+    </div>
+  </div>
+  <div class="price-tag">
+    <div class="price-amount">FREE</div>
+    <div class="price-per">BYO gear</div>
+  </div>
+</div>
+
+<!-- DINING -->
+<h2 class="dining">🍴 Dining Options By Island</h2>
+
+<h3>🟢 Kauai Dining</h3>
+
+<div class="dining-grid">
+  <div class="meal-card breakfast">
+    <div class="meal-header">🍳 BREAKFAST</div>
+    <div class="meal-item"><strong>Java Kai (Kapaa)</strong> - <span class="price">$10-15/person</span><div class="desc">Locals' favorite coffee + breakfast, acai bowls</div></div>
+    <div class="meal-item"><strong>Acai Bowls roadside</strong> - <span class="price">$10-12</span><div class="desc">Tropical fruit + granola, find anywhere</div></div>
+    <div class="meal-item"><strong>Resort breakfast buffet</strong> - <span class="price">$30-50/person</span><div class="desc">Full spread at hotel</div></div>
+    <div class="meal-item"><strong>Cook at villa</strong> - <span class="price">$5-10/person</span><div class="desc">Grocery store breakfast saves $$$</div></div>
+  </div>
+
+  <div class="meal-card lunch">
+    <div class="meal-header">🥗 LUNCH</div>
+    <div class="meal-item"><strong>Pono Market (Kapaa)</strong> - <span class="price">$10-15</span><div class="desc">Local plate lunch perfection</div></div>
+    <div class="meal-item"><strong>Hamura Saimin (Lihue)</strong> - <span class="price">$8-12</span><div class="desc">James Beard award noodle soup</div></div>
+    <div class="meal-item"><strong>Hanalei Dolphin</strong> - <span class="price">$25-40</span><div class="desc">Riverside fresh fish, north shore</div></div>
+    <div class="meal-item"><strong>Resort poolside</strong> - <span class="price">$25-40/person</span><div class="desc">Convenient but pricey</div></div>
+  </div>
+
+  <div class="meal-card dinner">
+    <div class="meal-header">🍷 DINNER</div>
+    <div class="meal-item"><strong>Bar Acuda (Hanalei)</strong> - <span class="price">$60-90/person</span><div class="desc">James Beard nominated tapas</div></div>
+    <div class="meal-item"><strong>Eating House 1849 (Roy Yamaguchi)</strong> - <span class="price">$70-100/person</span><div class="desc">Hawaii Regional Cuisine legend</div></div>
+    <div class="meal-item"><strong>Tidepools at Grand Hyatt</strong> - <span class="price">$80-120/person</span><div class="desc">Iconic overwater dining</div></div>
+    <div class="meal-item"><strong>Brennecke's Beach Broiler</strong> - <span class="price">$40-65/person</span><div class="desc">Casual oceanfront, kids' menu</div></div>
+    <div class="meal-item"><strong>Cook in villa</strong> - <span class="price">$15-25/person</span><div class="desc">Family meal at home base</div></div>
+  </div>
+</div>
+
+<h3>🟠 Big Island Dining</h3>
+
+<div class="dining-grid">
+  <div class="meal-card breakfast">
+    <div class="meal-header">🍳 BREAKFAST</div>
+    <div class="meal-item"><strong>Cafe 100 (Hilo)</strong> - <span class="price">$8-12</span><div class="desc">Loco Moco birthplace since 1947</div></div>
+    <div class="meal-item"><strong>Kona Coffee shops</strong> - <span class="price">$10-15</span><div class="desc">Authentic Kona estate coffee</div></div>
+    <div class="meal-item"><strong>Tex Drive-In (malasadas)</strong> - <span class="price">$5-10</span><div class="desc">Hot Portuguese donuts!</div></div>
+    <div class="meal-item"><strong>Cook at villa</strong> - <span class="price">$5-10/person</span><div class="desc">Costco run = stocked kitchen</div></div>
+  </div>
+
+  <div class="meal-card lunch">
+    <div class="meal-header">🥗 LUNCH</div>
+    <div class="meal-item"><strong>Da Poke Shack (Kona)</strong> - <span class="price">$15-25</span><div class="desc">Cult-favorite poke bowls</div></div>
+    <div class="meal-item"><strong>Hawaiian Style Cafe (Waimea)</strong> - <span class="price">$15-20</span><div class="desc">Massive plate lunch portions</div></div>
+    <div class="meal-item"><strong>Hawaiian Vanilla Co luncheon</strong> - <span class="price">$75/person</span><div class="desc">3-course vanilla farm experience</div></div>
+    <div class="meal-item"><strong>Beach picnic</strong> - <span class="price">$10-15/person</span><div class="desc">Grocery store + scenic beach</div></div>
+  </div>
+
+  <div class="meal-card dinner">
+    <div class="meal-header">🍷 DINNER</div>
+    <div class="meal-item"><strong>Merriman's Waikoloa</strong> - <span class="price">$70-100/person</span><div class="desc">James Beard chef, Hawaii Regional Cuisine pioneer</div></div>
+    <div class="meal-item"><strong>ULU Ocean Grill (Four Seasons)</strong> - <span class="price">$80-120/person</span><div class="desc">Sustainable seafood, James Beard nominee</div></div>
+    <div class="meal-item"><strong>Brown's Beach House (Fairmont)</strong> - <span class="price">$60-90/person</span><div class="desc">Beachfront Hawaiian fusion</div></div>
+    <div class="meal-item"><strong>Hawaii Loa Luau (Fairmont)</strong> - <span class="price">$200/adult $115/kid</span><div class="desc">Resort luau Sat-Sun only</div></div>
+    <div class="meal-item"><strong>Cook in villa</strong> - <span class="price">$15-25/person</span><div class="desc">Fresh fish + Kona coffee</div></div>
+  </div>
+</div>
+
+<!-- BUDGET SUMMARIES -->
+<h2>💰 Budget Estimates by Tier</h2>
+
+<div class="budget-summary">
+  <h3>$ BUDGET-FRIENDLY ($30-35K family of 5)</h3>
+  <p style="color: var(--muted); margin-bottom: 12px;">Comfortable but resourceful - cook most meals, mix of activities, budget hotels</p>
+  <table class="budget-table">
+    <tr><td>Flights (family of 5)</td><td>$3,625</td></tr>
+    <tr><td>Lodging ($ tier, ~$250/night × 15 nights)</td><td>$3,750</td></tr>
+    <tr><td>Cars (2 islands, full-size SUV)</td><td>$1,500</td></tr>
+    <tr><td>Food (mostly cooked, 1-2 nice dinners)</td><td>$2,500</td></tr>
+    <tr><td>Activities (5-6 paid + free hikes/beaches)</td><td>$3,500</td></tr>
+    <tr><td>Misc + tips + souvenirs</td><td>$1,000</td></tr>
+    <tr><td><strong>TOTAL TRIP</strong></td><td><strong>~$15,875</strong></td></tr>
+  </table>
+  <p style="margin-top: 12px; font-size: 0.9em; color: var(--muted);"><em>Note: This budget assumes major cost-saving strategies. Realistic but tight.</em></p>
+</div>
+
+<div class="budget-summary" style="background: linear-gradient(135deg, var(--orange-bg), var(--yellow-bg)); border-left-color: var(--orange);">
+  <h3 style="color: var(--orange);">$$ COMFORTABLE LUXURY ($35K family of 5)</h3>
+  <p style="color: var(--muted); margin-bottom: 12px;">Costco package style - solid hotels with kitchens, mix dining + cooking, full activity slate</p>
+  <table class="budget-table">
+    <tr><td>Flights + 2 cars + 2 hotels (Costco-style bundle)</td><td>$18,500</td></tr>
+    <tr><td>Volcano cottage (1 night)</td><td>$700</td></tr>
+    <tr><td>Hilo hotel (1 night)</td><td>$250</td></tr>
+    <tr><td>Food (mix cooking + 5-6 nice dinners)</td><td>$4,500</td></tr>
+    <tr><td>Activities (manta ray, helicopter, luau, tubing, etc.)</td><td>$7,000</td></tr>
+    <tr><td>Spa + extras</td><td>$1,500</td></tr>
+    <tr><td>Tips + misc</td><td>$1,000</td></tr>
+    <tr><td>Costco Cash Card back</td><td>-$1,100</td></tr>
+    <tr><td><strong>TOTAL TRIP</strong></td><td><strong>~$32,350</strong></td></tr>
+  </table>
+  <p style="margin-top: 12px; font-size: 0.9em; color: var(--muted);"><em>Hits a $35K target for family of 5 with mid-tier hotels + kitchen savings.</em></p>
+</div>
+
+<div class="budget-summary" style="background: linear-gradient(135deg, var(--purple-bg), var(--blue-bg)); border-left-color: var(--purple);">
+  <h3 style="color: var(--purple);">$$$ PREMIUM ($45-55K family of 5)</h3>
+  <p style="color: var(--muted); margin-bottom: 12px;">Four Seasons + Timbers Kauai, eat out mostly, premium experiences</p>
+  <table class="budget-table">
+    <tr><td>Flights (family of 5)</td><td>$3,625</td></tr>
+    <tr><td>Timbers Kauai 3-BR (7 nights)</td><td>$10,500</td></tr>
+    <tr><td>Hualalai Villa Four Seasons (6 nights)</td><td>$15,750</td></tr>
+    <tr><td>Volcano cottage + Hilo hotel</td><td>$950</td></tr>
+    <tr><td>Cars (2 islands, full-size SUV)</td><td>$1,500</td></tr>
+    <tr><td>Food (mostly resort/fine dining)</td><td>$7,500</td></tr>
+    <tr><td>Activities (everything we want)</td><td>$8,000</td></tr>
+    <tr><td>Spa (multiple treatments)</td><td>$2,500</td></tr>
+    <tr><td>Tips + misc + souvenirs</td><td>$2,000</td></tr>
+    <tr><td><strong>TOTAL TRIP</strong></td><td><strong>~$52,325</strong></td></tr>
+  </table>
+</div>
+
+<!-- JOIN OPTIONS -->
+<h2>🤝 Options for Joining Us</h2>
+
+<div class="tier-card">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">🌴 Option 1: Full 15-day trip with us</div>
+      <div class="tier-desc">Join for the whole adventure - both islands</div>
+    </div>
+    <div class="tier-price">$35K family of 5</div>
+  </div>
+  <ul class="tier-features">
+    <li>Mon 7/6 - Tue 7/21 (15 nights)</li>
+    <li>Kauai (7 nights) + Volcano cottage (1) + Big Island (7 nights)</li>
+    <li>Full Costco 2-island package</li>
+    <li>Mix of group + family time</li>
+  </ul>
+</div>
+
+<div class="tier-card dollar2">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">🟢 Option 2: Kauai only (7 nights)</div>
+      <div class="tier-desc">Join us for just the Kauai phase</div>
+    </div>
+    <div class="tier-price">~$18-22K family of 5</div>
+  </div>
+  <ul class="tier-features">
+    <li>Mon 7/6 - Mon 7/13 (7 nights)</li>
+    <li>Stay at Koloa Landing or Timbers Kauai</li>
+    <li>Adventure activities: Na Pali, helicopter, tubing</li>
+    <li>You head home, we continue to Big Island</li>
+  </ul>
+</div>
+
+<div class="tier-card dollar3">
+  <div class="tier-header">
+    <div>
+      <div class="tier-name">🟠 Option 3: Big Island only (8 nights)</div>
+      <div class="tier-desc">Just Big Island phase</div>
+    </div>
+    <div class="tier-price">~$16-20K family of 5</div>
+  </div>
+  <ul class="tier-features">
+    <li>Tue 7/14 - Tue 7/21 (8 nights)</li>
+    <li>Volcano experience + Fairway Villas Waikoloa</li>
+    <li>Manta ray, volcano, Mauna Kea, vanilla farm</li>
+    <li>Fly home from Kona</li>
+  </ul>
+</div>
+
+<div class="note-box">
+  <strong>💡 Combined trip option:</strong> A 3-bedroom Timbers Kauai signature residence sleeps 6-8 - we could potentially share larger accommodations and save money on both ends if you join for Kauai phase!
+</div>
+
+<footer>
+  🦊 Questions? Let's chat! · Made with 💚 for friends considering Hawaii 2026
+</footer>
+
+</div>
+</body>
+</html>
