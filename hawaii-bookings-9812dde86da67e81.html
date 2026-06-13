@@ -23,6 +23,7 @@
   .ctitle h2 { font-size:16px; }
   .ctitle .when { font-size:13px; color:#94a3b8; margin-top:2px; }
   .conf { font-size:12px; font-weight:700; color:#34d399; white-space:nowrap; }
+  .conf.todo { color:#fbbf24; }
   .chev { color:#64748b; font-size:14px; transition:transform .2s; }
   .card.open .chev { transform:rotate(90deg); }
   .cbody { display:none; padding:0 16px 16px; border-top:1px solid #334155; }
@@ -36,6 +37,10 @@
   .note { background:#0c4a6e; border-radius:8px; padding:8px 11px; margin-top:10px; font-size:12.5px; color:#bae6fd; }
   .note.warn { background:#78350f; color:#fde68a; }
   .total { text-align:center; margin:22px 0 6px; font-size:15px; font-weight:700; color:#34d399; }
+  .sec { margin:30px 0 6px; padding:8px 14px; border-radius:10px; font-size:14px; font-weight:800; letter-spacing:1px; text-transform:uppercase; }
+  .sec.fl { background:#1e3a5f; color:#93c5fd; }
+  .sec.lo { background:#3b2f1e; color:#fcd34d; }
+  .sec.ac { background:#1e3b2f; color:#6ee7b7; }
   footer { text-align:center; margin-top:22px; color:#475569; font-size:11px; }
 </style>
 </head>
@@ -49,7 +54,143 @@
   <div class="nav"><a href="hawaii-itinerary.html">← Back to Itinerary</a></div>
 </header>
 
-<div class="total">✅ 6 activities booked</div>
+<div class="total">✅ 6 activities booked · ✈️ 1 flight booked · 🏨 lodging in progress</div>
+
+<!-- ============ FLIGHTS ============ -->
+<div class="sec fl">✈️ Flights</div>
+
+<div class="card" id="interisland" onclick="this.classList.toggle('open')">
+  <div class="chead"><span class="emoji">🏝️</span>
+    <div class="ctitle"><h2>Inter-island: LIH → ITO (via HNL)</h2><div class="when">Mon Jul 13 · 3:45 PM-6:10 PM</div></div>
+    <span class="conf">BHYV9H</span><span class="chev">▶</span>
+  </div>
+  <div class="cbody">
+    <div class="grid">
+      <span class="k">Status</span><span class="v"><span class="status">BOOKED ✅</span></span>
+      <span class="k">Airline</span><span class="v">Southwest - WN661 (LIH→HNL) + WN1906 (HNL→ITO)</span>
+      <span class="k">Depart</span><span class="v">Lihue (LIH) 3:45 PM</span>
+      <span class="k">Arrive</span><span class="v">Hilo (ITO) 6:10 PM · Row 9</span>
+      <span class="k">Family conf</span><span class="v"><b>BHYV9H</b> (Bobby + 3 kids)</span>
+      <span class="k">Liz companion</span><span class="v"><b>BT3OTO</b> ($5.60)</span>
+      <span class="k">Email</span><span class="v">zhoubobby@gmail.com</span>
+      <span class="k">Manage</span><span class="v"><a href="https://www.southwest.com/air/manage-reservation/" target="_blank">Southwest manage →</a></span>
+    </div>
+    <div class="note">🎂 It's Adalyn's birthday - tell the gate agents! Birthday girl gets the window seat.</div>
+  </div>
+</div>
+
+<div class="card" id="flight-out" onclick="this.classList.toggle('open')">
+  <div class="chead"><span class="emoji">🛫</span>
+    <div class="ctitle"><h2>Outbound: MCI → LIH</h2><div class="when">Mon Jul 6 · time TBD</div></div>
+    <span class="conf todo">PENDING</span><span class="chev">▶</span>
+  </div>
+  <div class="cbody">
+    <div class="grid">
+      <span class="k">Status</span><span class="v"><span class="status todo">NOT BOOKED</span></span>
+      <span class="k">Route</span><span class="v">Kansas City (MCI) → Lihue, Kauai (LIH)</span>
+      <span class="k">Note</span><span class="v">Waiting on friends to confirm. Landing time decides Fern Grotto Mon vs Tue.</span>
+    </div>
+    <div class="note warn">📝 Fill in once booked: airline, flight #s, conf #, seats, bag count.</div>
+  </div>
+</div>
+
+<div class="card" id="flight-home" onclick="this.classList.toggle('open')">
+  <div class="chead"><span class="emoji">🛬</span>
+    <div class="ctitle"><h2>Return: KOA → MCI</h2><div class="when">Tue Jul 21 · time TBD</div></div>
+    <span class="conf todo">PENDING</span><span class="chev">▶</span>
+  </div>
+  <div class="cbody">
+    <div class="grid">
+      <span class="k">Status</span><span class="v"><span class="status todo">NOT BOOKED</span></span>
+      <span class="k">Route</span><span class="v">Kona (KOA) → Kansas City (MCI)</span>
+      <span class="k">Note</span><span class="v">Waiting on friends. Likely red-eye / overnight connection.</span>
+    </div>
+    <div class="note warn">📝 Fill in once booked: airline, flight #s, conf #, seats, bag count.</div>
+  </div>
+</div>
+
+<!-- ============ LODGING ============ -->
+<div class="sec lo">🏨 Lodging</div>
+
+<div class="card" id="hotel-kauai" onclick="this.classList.toggle('open')">
+  <div class="chead"><span class="emoji">🌴</span>
+    <div class="ctitle"><h2>Kauai Hotel - 7 nights</h2><div class="when">Mon Jul 6 → Mon Jul 13</div></div>
+    <span class="conf todo">PENDING</span><span class="chev">▶</span>
+  </div>
+  <div class="cbody">
+    <div class="grid">
+      <span class="k">Status</span><span class="v"><span class="status todo">WAITING ON FRIENDS</span></span>
+      <span class="k">Nights</span><span class="v">7 (Jul 6-13)</span>
+      <span class="k">Note</span><span class="v">Costco package may bundle hotel + car here.</span>
+    </div>
+    <div class="note warn">📝 Fill in once booked: hotel name, address, conf #, room type, check-in/out times.</div>
+  </div>
+</div>
+
+<div class="card" id="hotel-hilo" onclick="this.classList.toggle('open')">
+  <div class="chead"><span class="emoji">🌋</span>
+    <div class="ctitle"><h2>Hilo Hotel - 3 nights</h2><div class="when">Mon Jul 13 → Thu Jul 16</div></div>
+    <span class="conf todo">TO BOOK</span><span class="chev">▶</span>
+  </div>
+  <div class="cbody">
+    <div class="grid">
+      <span class="k">Status</span><span class="v"><span class="status todo">TO BOOK</span></span>
+      <span class="k">Nights</span><span class="v">3 (Jul 13-16)</span>
+      <span class="k">Kit's pick</span><span class="v">Grand Naniloa Hotel (DoubleTree), oceanfront ~$280/nt</span>
+    </div>
+    <div class="note warn">🎂 When booking: ask for birthday amenity for Adalyn (Jul 13)! Then fill in conf #, address, check-in.</div>
+  </div>
+</div>
+
+<div class="card" id="hotel-kona" onclick="this.classList.toggle('open')">
+  <div class="chead"><span class="emoji">🏖️</span>
+    <div class="ctitle"><h2>Kona Hotel - 5 nights</h2><div class="when">Thu Jul 16 → Tue Jul 21</div></div>
+    <span class="conf todo">TO BOOK</span><span class="chev">▶</span>
+  </div>
+  <div class="cbody">
+    <div class="grid">
+      <span class="k">Status</span><span class="v"><span class="status todo">TO BOOK</span></span>
+      <span class="k">Nights</span><span class="v">5 (Jul 16-21)</span>
+      <span class="k">Kit's pick</span><span class="v">Outrigger Kona Resort & Spa (Keauhou) ~$450/nt - manta launch + Rays on the Bay on-site</span>
+    </div>
+    <div class="note warn">💆 After booking: reserve couples spa Sun Jul 19 + finale dinner Mon Jul 20. Then fill in conf #, address, check-in.</div>
+  </div>
+</div>
+
+<!-- ============ RENTAL CARS ============ -->
+<div class="card" id="car-kauai" onclick="this.classList.toggle('open')">
+  <div class="chead"><span class="emoji">🚙</span>
+    <div class="ctitle"><h2>Rental Car - Kauai</h2><div class="when">Jul 6 → Jul 13 · LIH</div></div>
+    <span class="conf todo">PENDING</span><span class="chev">▶</span>
+  </div>
+  <div class="cbody">
+    <div class="grid">
+      <span class="k">Status</span><span class="v"><span class="status todo">TO BOOK</span></span>
+      <span class="k">Vehicle</span><span class="v">Full-size SUV (5 + luggage + gear)</span>
+      <span class="k">Pickup/return</span><span class="v">LIH (Lihue Airport)</span>
+    </div>
+    <div class="note warn">📝 Fill in once booked: company, conf #, pickup time.</div>
+  </div>
+</div>
+
+<div class="card" id="car-big" onclick="this.classList.toggle('open')">
+  <div class="chead"><span class="emoji">🚙</span>
+    <div class="ctitle"><h2>Rental Car - Big Island (one-way)</h2><div class="when">Jul 13 → Jul 21 · ITO → KOA</div></div>
+    <span class="conf todo">PENDING</span><span class="chev">▶</span>
+  </div>
+  <div class="cbody">
+    <div class="grid">
+      <span class="k">Status</span><span class="v"><span class="status todo">TO BOOK</span></span>
+      <span class="k">Vehicle</span><span class="v">Full-size SUV</span>
+      <span class="k">Pickup</span><span class="v">ITO (Hilo) Mon Jul 13 ~6:30 PM</span>
+      <span class="k">Return</span><span class="v">KOA (Kona) Tue Jul 21</span>
+    </div>
+    <div class="note warn">📝 One-way ITO→KOA. Fill in once booked: company, conf #, pickup time.</div>
+  </div>
+</div>
+
+<!-- ============ ACTIVITIES ============ -->
+<div class="sec ac">🎟️ Activities</div>
 
 <!-- AIR VENTURES -->
 <div class="card" id="air" onclick="this.classList.toggle('open')">
