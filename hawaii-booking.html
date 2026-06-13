@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hawaii 2026 - Booking Command Center</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f8fafc; color:#1e293b; line-height:1.5; padding-bottom:80px; }
+  .wrap { max-width:760px; margin:0 auto; padding:20px 14px; }
+  header { text-align:center; padding:22px 0 6px; }
+  header h1 { font-size:26px; }
+  header p { color:#64748b; font-size:14px; margin-top:4px; }
+  .progress { background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:12px 16px; margin:16px 0; text-align:center; font-weight:700; font-size:15px; }
+  .nav a { color:#0ea5e9; text-decoration:none; font-size:13px; margin:0 8px; }
+
+  .tier { margin:28px 0 10px; padding:10px 16px; border-radius:12px; font-weight:700; font-size:16px; }
+  .t1 { background:#fee2e2; color:#991b1b; }
+  .t2 { background:#fef3c7; color:#92400e; }
+  .t3 { background:#dbeafe; color:#1e40af; }
+  .t4 { background:#f1f5f9; color:#475569; }
+  .tier small { display:block; font-weight:500; font-size:12.5px; margin-top:2px; }
+
+  .item { background:#fff; border:1px solid #e2e8f0; border-radius:14px; margin-bottom:12px; padding:14px 16px; transition:opacity .25s; }
+  .item.done { opacity:.45; }
+  .item.done .title { text-decoration:line-through; }
+  .top { display:flex; align-items:flex-start; gap:12px; }
+  .top input { width:24px; height:24px; accent-color:#16a34a; flex-shrink:0; margin-top:2px; cursor:pointer; }
+  .title { font-size:16.5px; font-weight:700; flex:1; }
+  .price { font-weight:700; color:#0f766e; font-size:14px; white-space:nowrap; }
+  .detail { margin:8px 0 0 36px; font-size:13.5px; color:#475569; }
+  .detail b { color:#1e293b; }
+  .row { padding:3px 0; }
+  .shaka { display:inline-block; background:#fbbf24; color:#78350f; font-weight:700; font-size:11.5px; border-radius:999px; padding:2px 9px; margin-left:6px; }
+  .btns { margin:10px 0 0 36px; display:flex; gap:8px; flex-wrap:wrap; }
+  .btn { display:inline-block; background:#0ea5e9; color:#fff; text-decoration:none; font-weight:600; font-size:13px; padding:7px 14px; border-radius:8px; }
+  .btn.alt { background:#f1f5f9; color:#334155; }
+  .btn.phone { background:#16a34a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>✅ Hawaii Booking Command Center</h1>
+  <p>Check items off as you book · progress saves on this device</p>
+  <p style="margin-top:6px;"><b>💎 Shaka Gold Card #86843</b> (Elizabeth Zhou) - log in at <a href="https://hawaiifun.org" target="_blank">HawaiiFun.org</a> first for discounted links</p>
+  <div class="nav"><a href="index.html">← Trip Overview</a> · <a href="hawaii-itinerary.html">Day-by-Day Itinerary</a></div>
+</header>
+
+<div class="progress" id="prog">0 of 13 booked</div>
+
+<!-- ============ TIER 1 ============ -->
+<div class="tier t1">🚨 BOOK FIRST - limited spots / sells out
+  <small>Small operators, few seats. These set the trip's skeleton.</small>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="manta">
+  <span class="title">🪼 Manta Ray Night Snorkel - Anelakai</span><span class="price">~$1,001</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Sat Jul 18 @ 9:00 PM</b> (1-hr tour)</div>
+    <div class="row">👥 5 guests (ages 2+ OK) - need full names for all 5 at checkout</div>
+    <div class="row">💰 $180/pp × 5 + $101.40 tax</div>
+    <div class="row">🔁 Backup: Mon Jul 20 @ 9 PM</div>
+  </div>
+  <div class="btns"><a class="btn" href="https://anelakai.com" target="_blank">Book Online</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="catamaran">
+  <span class="title">🛥️ Na Pali Catamaran - Blue Dolphin <span class="shaka">SHAKA 20%</span></span><span class="price">~$822 w/ Shaka</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Wed Jul 8 @ 8:00 AM check-in</b>, Deluxe Na Pali Snorkel (5.5 hr), Port Allen</div>
+    <div class="row">👥 2 Adults ($205) + 1 Youth 13-17 = Annabelle ($190) + 2 Children = Adalyn + Andrew ($175 ea)</div>
+    <div class="row">💎 Book via HawaiiFun.org link for 20% off (~$205 savings) - or mention card #86843 by phone</div>
+    <div class="row">⚠️ Direct site may show Cloudflare block - use HawaiiFun link or phone</div>
+  </div>
+  <div class="btns"><a class="btn" href="https://hawaiifun.org/discounted-activities/" target="_blank">Book via HawaiiFun</a><a class="btn phone" href="tel:8083355553">📞 808-335-5553</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="luau">
+  <span class="title">🌺 Smith Family Garden Luau <span class="shaka">SHAKA $15/pp</span></span><span class="price">~$455 w/ Shaka</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Fri Jul 10 @ 5:00 PM</b> (arrive 3:45-4 PM to explore gardens)</div>
+    <div class="row">👥 <b>3 Adults</b> (Bobby, Liz, Annabelle-14 counts as adult, $150 ea) + <b>1 Junior 7-13</b> = Adalyn ($45) + <b>1 Child 3-6</b> = Andrew ($35)</div>
+    <div class="row">💎 Check the Shaka Gold box at checkout OR book via HawaiiFun</div>
+    <div class="row">💳 Day-of extras: $25 park entry + $10 parking (card only)</div>
+    <div class="row">🏨 Hotel field: enter your Kauai hotel (or TBD)</div>
+  </div>
+  <div class="btns"><a class="btn" href="https://www.smithskauai.com/garden-luau/buy-tickets-smiths-kauai-luau/" target="_blank">Book Online</a><a class="btn phone" href="tel:8088216895">📞 808-821-6895</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="vanilla">
+  <span class="title">🍦 Hawaiian Vanilla Co. Luncheon</span><span class="price">~$280</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Thu Jul 16 @ 12:30 PM</b> - availability already confirmed ✅</div>
+    <div class="row">👥 5 (≈$65/adult, ≈$32/child)</div>
+    <div class="row">🥗 <b>Mention GF + dairy-free needs when booking</b> - they accommodate with notice</div>
+  </div>
+  <div class="btns"><a class="btn" href="https://hawaiianvanilla.com" target="_blank">Book Online</a><a class="btn phone" href="tel:8087761771">📞 808-776-1771</a></div>
+</div>
+
+<!-- ============ TIER 2 ============ -->
+<div class="tier t2">⏰ BOOK THIS WEEK - good availability now, July fills up
+  <small>Plenty of spots today, but you're 3.5 weeks out.</small>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="airtour">
+  <span class="title">✈️ Air Ventures Fixed-Wing Tour</span><span class="price">~$1,000</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Tue Jul 7 @ 11:30 AM</b> (check in 10:45, Lihue Airport)</div>
+    <div class="row">👥 5 passengers (~$200/pp, Airvan w/ bubble windows)</div>
+    <div class="row">🔁 Backups: Tue 10 AM or 1:30 PM → Sat Jul 11 11:30/1:30</div>
+  </div>
+  <div class="btns"><a class="btn" href="https://airventureshawaii.com" target="_blank">Book Online</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="tubing">
+  <span class="title">🛟 Backcountry Mountain Tubing</span><span class="price">~$750</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Sat Jul 11 @ 2:20 PM</b> (~3 hr, picnic included)</div>
+    <div class="row">👥 5 (Andrew 5yo OK - min age 5, 43"+)</div>
+    <div class="row">🔁 Backup: Sun Jul 12 @ 2:20 PM (also wide open)</div>
+  </div>
+  <div class="btns"><a class="btn" href="https://kauaibackcountry.com" target="_blank">Book Online</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="grotto">
+  <span class="title">🌿 Fern Grotto River Cruise <span class="shaka">SHAKA 20%</span></span><span class="price">~$112 w/ Shaka</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Mon Jul 6 @ 2:00 or 3:30 PM</b> if arrival allows · otherwise <b>Tue Jul 7 @ 2:00 PM</b></div>
+    <div class="row">⚠️ Wait to book until MCI→LIH flight is locked (need landing time)</div>
+    <div class="row">👥 3 Adults ($35) + 2 Children 2-12 ($17.50) - check if Annabelle counts as adult here</div>
+    <div class="row">💳 Day-of: $25 park entry + $10 parking (same Wailua lot as luau)</div>
+  </div>
+  <div class="btns"><a class="btn" href="https://www.smithskauai.com/fern-grotto/" target="_blank">Book Online</a><a class="btn phone" href="tel:8088216892">📞 808-821-6892</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="chocolate">
+  <span class="title">🍫 Lydgate Farms Chocolate Tour</span><span class="price">~$350</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Thu Jul 9</b> - check their tour times (usually ~9:30 AM / 1 PM - aim for the afternoon slot!)</div>
+    <div class="row">👥 5 (kids welcome)</div>
+  </div>
+  <div class="btns"><a class="btn" href="https://lydgatefarms.com" target="_blank">Check Times + Book</a></div>
+</div>
+
+<!-- ============ TIER 3 ============ -->
+<div class="tier t3">🏨 LOGISTICS - hotels + car (book once friends confirm flights, or now if comfortable)
+  <small>Big Island lodging can book NOW (independent of friends). Kauai waits on the group.</small>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="hilohotel">
+  <span class="title">🏨 Hilo Hotel - 3 nights</span><span class="price">~$850</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Mon Jul 13 → Thu Jul 16</b> (3 nights)</div>
+    <div class="row">⭐ Kit's pick: <b>Grand Naniloa Hotel (DoubleTree)</b> - oceanfront Hilo Bay, ~$280/nt, fits 5</div>
+    <div class="row">🎂 <b>When booking, ask for birthday decoration/amenity for Adalyn (Jul 13)!</b></div>
+  </div>
+  <div class="btns"><a class="btn" href="https://www.hilton.com/en/hotels/itohwdt-grand-naniloa-hotel-hilo/" target="_blank">Grand Naniloa</a><a class="btn alt" href="https://www.google.com/travel/search?q=hilo%20hotels%20july%2013-16%202026" target="_blank">Compare Hilo Hotels</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="konahotel">
+  <span class="title">🏨 Kona Hotel - 5 nights</span><span class="price">~$2,250</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Thu Jul 16 → Tue Jul 21</b> (5 nights)</div>
+    <div class="row">⭐ Kit's pick: <b>Outrigger Kona Resort & Spa (Keauhou)</b> ~$450/nt - manta launch bay ON-SITE, waterslide pool, Rays on the Bay restaurant in-house</div>
+    <div class="row">💆 After booking: reserve couples spa for Sun Jul 19</div>
+  </div>
+  <div class="btns"><a class="btn" href="https://www.outrigger.com/hotels-resorts/hawaiian-islands/hawaii-island/outrigger-kona-resort-and-spa" target="_blank">Outrigger Kona</a><a class="btn alt" href="https://www.google.com/travel/search?q=keauhou%20kona%20hotels%20july%2016-21%202026" target="_blank">Compare Kona Hotels</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="bicar">
+  <span class="title">🚙 Big Island Car - one-way ITO → KOA</span><span class="price">~$700-900</span></div>
+  <div class="detail">
+    <div class="row">📅 Pick up <b>ITO (Hilo) Mon Jul 13 ~6:30 PM</b> → return <b>KOA (Kona) Tue Jul 21</b></div>
+    <div class="row">🚙 Full-size SUV (5 + luggage + gear)</div>
+    <div class="row">💡 Costco car-only rates work even though the package doesn't; one-way fee usually $0-75</div>
+  </div>
+  <div class="btns"><a class="btn" href="https://www.costcotravel.com/Rental-Cars" target="_blank">Costco Cars</a><a class="btn alt" href="https://www.kayak.com/cars/Hilo,HI-c30135/Kona,HI-c30874/2026-07-13/2026-07-21" target="_blank">Compare on Kayak</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="dinner">
+  <span class="title">🍽️ Finale Dinner - Rays on the Bay</span><span class="price">~$250</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Mon Jul 20 @ ~6:00 PM</b>, party of 5</div>
+    <div class="row">🪼 Oceanfront at Outrigger Keauhou - manta rays visible from the deck after dark</div>
+    <div class="row">🔁 Alts: Huggo's, Magics Beach Grill</div>
+  </div>
+  <div class="btns"><a class="btn" href="https://www.outrigger.com/hotels-resorts/hawaiian-islands/hawaii-island/outrigger-kona-resort-and-spa/dining/rays-on-the-bay" target="_blank">Rays on the Bay</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="spa">
+  <span class="title">💆 Couples Spa - Liz + Bobby</span><span class="price">~$700-800</span></div>
+  <div class="detail">
+    <div class="row">📅 <b>Sun Jul 19, afternoon</b></div>
+    <div class="row">🏨 Book at Kona resort spa after hotel is confirmed</div>
+  </div>
+  <div class="btns"><a class="btn alt" href="#" onclick="return false;">Book after Kona hotel ✓</a></div>
+</div>
+
+<!-- ============ TIER 4 ============ -->
+<div class="tier t4">⏳ WAITING ON FRIENDS - park these
+  <small>Can't book until the group confirms. Everything above works regardless.</small>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="flights">
+  <span class="title">✈️ Flights MCI → LIH (Jul 6) + KOA → MCI (Jul 21)</span><span class="price">~$3,600</span></div>
+  <div class="detail">
+    <div class="row">Candidate outbound: United MCI 9:10 AM → LIH 3:37 PM (1 stop DEN) ~$392/pp</div>
+    <div class="row">Candidate return: United KOA 8 PM → MCI 10:50 AM+1 (1 stop DEN) ~$259/pp</div>
+    <div class="row">⚠️ Landing time decides Fern Grotto Mon vs Tue</div>
+  </div>
+  <div class="btns"><a class="btn alt" href="https://www.google.com/travel/flights?q=MCI%20to%20LIH%20july%206%202026" target="_blank">Check MCI→LIH</a><a class="btn alt" href="https://www.google.com/travel/flights?q=KOA%20to%20MCI%20july%2021%202026" target="_blank">Check KOA→MCI</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="kauaihotel">
+  <span class="title">🏨 Kauai Hotel - 7 nights (Jul 6-13)</span><span class="price">TBD</span></div>
+  <div class="detail">
+    <div class="row">Waiting on friends' decision · Costco package may still work here (single hotel + car)</div>
+  </div>
+  <div class="btns"><a class="btn alt" href="https://www.costcotravel.com" target="_blank">Costco Travel</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="kauaicar">
+  <span class="title">🚙 Kauai Car - LIH, Jul 6-13</span><span class="price">~$650-800</span></div>
+  <div class="detail">
+    <div class="row">Full-size SUV, 7 days · may bundle with Kauai hotel via Costco</div>
+  </div>
+  <div class="btns"><a class="btn alt" href="https://www.costcotravel.com/Rental-Cars" target="_blank">Costco Cars</a></div>
+</div>
+
+<div class="item"><div class="top"><input type="checkbox" data-k="bday">
+  <span class="title">🎂 Adalyn's Birthday Extras</span><span class="price">~$60</span></div>
+  <div class="detail">
+    <div class="row">After Hilo hotel: 🎂 pre-order cake from a Hilo bakery (pickup Jul 13 evening) + 🏨 hotel birthday amenity + 🌺 lei at any Kauai grocery Jul 13 morning</div>
+  </div>
+  <div class="btns"><a class="btn alt" href="#" onclick="return false;">After Hilo hotel ✓</a></div>
+</div>
+
+<p style="text-align:center; color:#94a3b8; font-size:12px; margin-top:28px;">Booked already: ✈️ Inter-island BHYV9H + BT3OTO · 🍽️ Volcano House Jul 14 6 PM · 💎 Shaka Card #86843<br>Updated Jun 12, 2026 · 🦊</p>
+
+</div>
+<script>
+const boxes = document.querySelectorAll('input[type=checkbox]');
+const KEY = 'hawaiiBooking2026';
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e) {}
+boxes.forEach(b => {
+  const k = b.dataset.k;
+  if (state[k]) { b.checked = true; b.closest('.item').classList.add('done'); }
+  b.addEventListener('change', () => {
+    state[k] = b.checked;
+    localStorage.setItem(KEY, JSON.stringify(state));
+    b.closest('.item').classList.toggle('done', b.checked);
+    update();
+  });
+});
+function update() {
+  const total = boxes.length;
+  const done = [...boxes].filter(b => b.checked).length;
+  document.getElementById('prog').textContent = done + ' of ' + total + ' booked' + (done===total ? ' 🎉 ALL DONE!' : '');
+}
+update();
+</script>
+</body>
+</html>
