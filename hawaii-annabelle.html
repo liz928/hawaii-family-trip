@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hawaii 🌺 the vibe</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(160deg, #fdf2f8 0%, #ecfeff 55%, #fefce8 100%);
+    color:#27272a; padding-bottom:70px;
+  }
+  .wrap { max-width:520px; margin:0 auto; padding:0 14px; }
+
+  header { text-align:center; padding:42px 10px 10px; }
+  header .big { font-size:54px; line-height:1; }
+  header h1 { font-size:30px; letter-spacing:-0.5px; margin:8px 0 2px; }
+  header p { color:#71717a; font-size:15px; }
+  .count { display:inline-block; margin-top:12px; background:#fff; border-radius:999px; padding:8px 18px; font-weight:700; font-size:14px; box-shadow:0 2px 10px rgba(0,0,0,.06); }
+
+  .section-label { text-align:center; font-size:13px; font-weight:800; letter-spacing:2px; color:#a1a1aa; margin:34px 0 12px; text-transform:uppercase; }
+
+  .island { text-align:center; font-size:24px; font-weight:800; margin:30px 0 4px; }
+  .island small { display:block; font-size:13px; color:#71717a; font-weight:500; margin-top:2px; }
+
+  .card {
+    background:#fff; border-radius:22px; margin:12px 0;
+    box-shadow:0 3px 14px rgba(0,0,0,.06); overflow:hidden;
+  }
+  .card .img { width:100%; height:150px; object-fit:cover; display:block; }
+  .card .emoji-hero { height:110px; display:flex; align-items:center; justify-content:center; font-size:58px; }
+  .pink  { background:linear-gradient(135deg,#fce7f3,#fbcfe8); }
+  .blue  { background:linear-gradient(135deg,#e0f2fe,#bae6fd); }
+  .green { background:linear-gradient(135deg,#dcfce7,#bbf7d0); }
+  .sun   { background:linear-gradient(135deg,#fef9c3,#fde68a); }
+  .purp  { background:linear-gradient(135deg,#ede9fe,#ddd6fe); }
+  .card .body { padding:14px 18px 18px; }
+  .day { font-size:12px; font-weight:800; letter-spacing:1.5px; color:#a1a1aa; text-transform:uppercase; }
+  .card h2 { font-size:21px; margin:3px 0 4px; letter-spacing:-0.3px; }
+  .card p { font-size:14.5px; color:#52525b; }
+  .tag { display:inline-block; margin-top:9px; margin-right:5px; background:#f4f4f5; border-radius:999px; padding:4px 12px; font-size:12.5px; font-weight:600; color:#3f3f46; }
+  .tag.hot { background:#fce7f3; color:#be185d; }
+
+  .bday {
+    background:linear-gradient(135deg,#f9a8d4,#c084fc); color:#fff;
+    border-radius:22px; margin:12px 0; padding:22px 20px; text-align:center;
+    box-shadow:0 6px 20px rgba(192,132,252,.35);
+  }
+  .bday .e { font-size:46px; }
+  .bday h2 { font-size:22px; margin:6px 0 4px; }
+  .bday p { font-size:14.5px; opacity:.95; }
+
+  .checklist { background:#fff; border-radius:22px; padding:20px; margin:12px 0; box-shadow:0 3px 14px rgba(0,0,0,.06); }
+  .checklist h3 { font-size:17px; margin-bottom:12px; }
+  .chk { display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px dashed #f4f4f5; font-size:15px; }
+  .chk:last-child { border-bottom:none; }
+  .chk input { width:21px; height:21px; accent-color:#ec4899; flex-shrink:0; }
+
+  footer { text-align:center; margin-top:34px; color:#a1a1aa; font-size:13px; }
+  footer a { color:#ec4899; text-decoration:none; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="big">🌺🤙</div>
+  <h1>HAWAII</h1>
+  <p>july 6 → 21 · two islands · zero school</p>
+  <div class="count">16 days in paradise ✨</div>
+</header>
+
+<!-- ============ KAUAI ============ -->
+<div class="island">🏝️ island #1: KAUAI<small>aka where they filmed jurassic park</small></div>
+
+<div class="card">
+  <div class="emoji-hero pink">✈️🌴</div>
+  <div class="body">
+    <span class="day">mon · july 6</span>
+    <h2>we land in hawaii</h2>
+    <p>get off plane → it's summer × 10. maybe a chill boat ride up a river. tropical drinks with umbrellas in them.</p>
+    <span class="tag">🟢 easy day</span>
+  </div>
+</div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/helicopter.jpg" alt="" onerror="this.outerHTML='<div class=\'emoji-hero blue\'>🛩️</div>'">
+  <div class="body">
+    <span class="day">tue · july 7</span>
+    <h2>tiny plane over the cliffs</h2>
+    <p>we fly over the na pali coast in a small plane. everyone gets a window. your camera roll is about to peak.</p>
+    <span class="tag hot">📸 insta gold</span>
+    <span class="tag">no early wakeup</span>
+  </div>
+</div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/napali-catamaran.png" alt="" onerror="this.outerHTML='<div class=\'emoji-hero blue\'>🛥️🐬</div>'">
+  <div class="body">
+    <span class="day">wed · july 8</span>
+    <h2>boat day w/ dolphins</h2>
+    <p>big catamaran along giant cliffs. snorkeling. dolphins are literally GUARANTEED. there's a waterslide ON the boat.</p>
+    <span class="tag hot">🐬 guaranteed</span>
+    <span class="tag">🛝 boat slide</span>
+    <span class="tag">😴 early one, sorry</span>
+  </div>
+</div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/chocolate.jpg" alt="" onerror="this.outerHTML='<div class=\'emoji-hero green\'>🍫</div>'">
+  <div class="body">
+    <span class="day">thu · july 9</span>
+    <h2>chocolate farm + beach</h2>
+    <p>chocolate tasting at a real cacao farm, then beach all afternoon. sea turtles just chill on the sand at poipu.</p>
+    <span class="tag">🍫 free samples</span>
+    <span class="tag">🐢 turtles</span>
+  </div>
+</div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/luau.jpg" alt="" onerror="this.outerHTML='<div class=\'emoji-hero sun\'>🔥💃</div>'">
+  <div class="body">
+    <span class="day">fri · july 10</span>
+    <h2>luau night</h2>
+    <p>sleep in, beach, then a real luau: feast + hula + a guy spinning FLAMING KNIVES. peacocks roam around the gardens.</p>
+    <span class="tag hot">🔥 fire knife</span>
+    <span class="tag">🦚 peacocks</span>
+  </div>
+</div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/tubing.jpg" alt="" onerror="this.outerHTML='<div class=\'emoji-hero green\'>🛟</div>'">
+  <div class="body">
+    <span class="day">sat · july 11</span>
+    <h2>tube thru jungle tunnels</h2>
+    <p>float a lazy river through actual dark tunnels in the mountain. they give you a headlamp. it's giving water park but real.</p>
+    <span class="tag hot">🔦 dark tunnels</span>
+    <span class="tag">starts 2pm 😌</span>
+  </div>
+</div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/waimea.jpg" alt="" onerror="this.outerHTML='<div class=\'emoji-hero sun\'>🏞️</div>'">
+  <div class="body">
+    <span class="day">sun · july 12</span>
+    <h2>the grand canyon... of hawaii</h2>
+    <p>road trip to a giant red canyon. lookouts, lunch on a mountain, shave ice on the way home.</p>
+    <span class="tag">📸 views</span>
+    <span class="tag">🍧 shave ice</span>
+  </div>
+</div>
+
+<div class="bday">
+  <div class="e">🎂🎉</div>
+  <h2>mon july 13 = ADALYN'S BIRTHDAY</h2>
+  <p>she turns 9 ON A PLANE between two hawaiian islands. be nice to her. there will be cake.</p>
+</div>
+
+<!-- ============ BIG ISLAND ============ -->
+<div class="island">🌋 island #2: BIG ISLAND<small>aka the one with the ACTIVE volcano</small></div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/volcano.jpg" alt="" onerror="this.outerHTML='<div class=\'emoji-hero pink\'>🌋</div>'">
+  <div class="body">
+    <span class="day">tue · july 14</span>
+    <h2>actual volcano day</h2>
+    <p>black sand beach with turtles → walk INSIDE a lava tube → dinner overlooking the crater → after dark it GLOWS ORANGE.</p>
+    <span class="tag hot">🔥 it glows</span>
+    <span class="tag">🖤 black sand</span>
+  </div>
+</div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/akaka.jpg" alt="" onerror="this.outerHTML='<div class=\'emoji-hero green\'>💧</div>'">
+  <div class="body">
+    <span class="day">wed · july 15</span>
+    <h2>waterfall day</h2>
+    <p>a 442-foot waterfall (that's like a 40-story building). short walk, big payoff. ice cream town at the bottom.</p>
+    <span class="tag">📸 waterfall pics</span>
+    <span class="tag">🍦 ice cream</span>
+  </div>
+</div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/stargazing.jpg" alt="" onerror="this.outerHTML='<div class=\'emoji-hero purp\'>🌌</div>'">
+  <div class="body">
+    <span class="day">thu · july 16</span>
+    <h2>above the clouds</h2>
+    <p>fancy vanilla farm lunch, then we drive UP a 14,000-ft mountain to watch sunset from above the clouds. then stars like you've never seen. bring a hoodie fr it's cold up there.</p>
+    <span class="tag hot">🌌 unreal stars</span>
+    <span class="tag">🧥 hoodie weather</span>
+  </div>
+</div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/puuhonua.jpg" alt="" onerror="this.outerHTML='<div class=\'emoji-hero sun\'>🗿</div>'">
+  <div class="body">
+    <span class="day">fri · july 17</span>
+    <h2>ancient hawaii</h2>
+    <p>sleep in, then a sacred old site with carved tiki guardians right on the ocean. turtles on the rocks. very photogenic.</p>
+    <span class="tag">🗿 tikis</span>
+    <span class="tag">🟢 chill</span>
+  </div>
+</div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/manta.jpg" alt="" onerror="this.outerHTML='<div class=\'emoji-hero purp\'>🪼</div>'">
+  <div class="body">
+    <span class="day">sat · july 18</span>
+    <h2>GIANT manta rays at night</h2>
+    <p>9pm. hawaiian canoe. lights shine into dark water and manta rays the size of CARS glide right under you. main character moment of the whole trip.</p>
+    <span class="tag hot">🪼 size of cars</span>
+    <span class="tag">🌙 night swim</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="emoji-hero sun">🏖️😴</div>
+  <div class="body">
+    <span class="day">sun · july 19</span>
+    <h2>do absolutely nothing day</h2>
+    <p>one of the best beaches in america. white sand. that's it. that's the day.</p>
+    <span class="tag">🟢 zero plans</span>
+  </div>
+</div>
+
+<div class="card">
+  <img class="img" src="hawaii-images/snorkel.jpg" alt="" onerror="this.outerHTML='<div class=\'emoji-hero blue\'>🐠</div>'">
+  <div class="body">
+    <span class="day">mon · july 20</span>
+    <h2>last day: best snorkel spot</h2>
+    <p>crystal water, coral, a million fish, maybe dolphins. then one last epic dinner.</p>
+    <span class="tag">🐠 finale</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="emoji-hero pink">🥲✈️</div>
+  <div class="body">
+    <span class="day">tue · july 21</span>
+    <h2>fly home</h2>
+    <p>back to kansas. condolences. at least the camera roll is immaculate.</p>
+  </div>
+</div>
+
+<!-- ============ PACKING ============ -->
+<div class="section-label">🎒 don't forget</div>
+<div class="checklist">
+  <h3>annabelle's pack list</h3>
+  <div class="chk"><input type="checkbox"><span>🩱 swimsuits (multiple. trust.)</span></div>
+  <div class="chk"><input type="checkbox"><span>🧥 hoodie - mountain night is COLD</span></div>
+  <div class="chk"><input type="checkbox"><span>📱 phone + charger + portable battery</span></div>
+  <div class="chk"><input type="checkbox"><span>🕶️ sunglasses</span></div>
+  <div class="chk"><input type="checkbox"><span>🧴 reef-safe sunscreen (it's the law, literally)</span></div>
+  <div class="chk"><input type="checkbox"><span>👟 shoes that can get muddy</span></div>
+  <div class="chk"><input type="checkbox"><span>🌺 cute outfit for luau night</span></div>
+  <div class="chk"><input type="checkbox"><span>🎧 headphones for the flights</span></div>
+  <div class="chk"><input type="checkbox"><span>🎁 something small for adalyn's bday</span></div>
+</div>
+
+<footer>
+  <p>made for annabelle 🤍 · <a href="index.html">boring parent version here</a></p>
+</footer>
+
+</div>
+</body>
+</html>
