@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kauai - Activities & Lodging Map</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f0f9ff; color:#0f172a; padding:16px; }
+  .wrap { max-width:1000px; margin:0 auto; }
+  h1 { font-size:24px; text-align:center; }
+  .sub { text-align:center; color:#475569; font-size:14px; margin:4px 0 16px; }
+  .mapbox { background:#fff; border-radius:18px; box-shadow:0 4px 18px rgba(0,0,0,.08); padding:10px; }
+  svg { width:100%; height:auto; display:block; }
+  .legend { display:flex; flex-wrap:wrap; gap:8px 18px; justify-content:center; margin:14px 0 6px; font-size:13px; }
+  .legend span { display:inline-flex; align-items:center; gap:6px; }
+  .dot { width:14px; height:14px; border-radius:50%; display:inline-block; }
+  .act { background:#0ea5e9; }
+  .air { background:#7c3aed; }
+  .lodge { background:#e11d48; }
+
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; margin-top:22px; }
+  .card { background:#fff; border-radius:16px; box-shadow:0 3px 14px rgba(0,0,0,.07); overflow:hidden; border-top:5px solid #e11d48; }
+  .card h3 { font-size:17px; padding:12px 16px 2px; }
+  .card .loc { padding:0 16px; color:#e11d48; font-size:12.5px; font-weight:600; }
+  .card ul { padding:8px 16px 14px 32px; font-size:13.5px; color:#334155; }
+  .card li { margin-bottom:3px; }
+  .price { float:right; background:#fee2e2; color:#9f1239; font-weight:700; font-size:12px; padding:2px 8px; border-radius:999px; margin:12px 14px 0 0; }
+  .tag { display:inline-block; background:#dcfce7; color:#166534; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; margin:0 16px 10px; }
+  .best { border-top-color:#16a34a; }
+  .best .loc { color:#16a34a; }
+  .note { font-size:12px; color:#64748b; text-align:center; margin-top:18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>🟢 Kauai - Activities & Lodging</h1>
+<div class="sub">Jul 6-13, 2026 · all scheduled activities + airport + top 3 hotels</div>
+
+<div class="mapbox">
+<svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- ocean -->
+  <rect x="0" y="0" width="1000" height="800" fill="#bae6fd" rx="14"/>
+
+  <!-- Kauai island silhouette -->
+  <path d="M 300 120
+           C 430 80, 600 90, 720 150
+           C 830 205, 905 300, 905 410
+           C 905 520, 850 620, 740 680
+           C 640 730, 520 735, 420 700
+           C 300 660, 200 600, 150 500
+           C 110 420, 120 320, 190 230
+           C 230 175, 260 140, 300 120 Z"
+        fill="#86efac" stroke="#15803d" stroke-width="3"/>
+
+  <!-- mountains center -->
+  <text x="470" y="380" font-size="30" text-anchor="middle">⛰️</text>
+  <text x="470" y="415" font-size="12" fill="#166534" text-anchor="middle" font-weight="700">Mt. Waiʻaleʻale</text>
+
+  <!-- Na Pali coast label (NW) -->
+  <text x="250" y="175" font-size="22" text-anchor="middle">🏔️</text>
+  <text x="250" y="205" font-size="12" fill="#166534" text-anchor="middle" font-weight="700">Na Pali Coast</text>
+  <text x="250" y="222" font-size="10.5" fill="#3f6212" text-anchor="middle">(air tour + catamaran views)</text>
+
+  <!-- compass -->
+  <text x="900" y="120" font-size="13" fill="#0c4a6e" text-anchor="middle" font-weight="700">N ↑</text>
+
+  <!-- ===== ACTIVITY MARKERS (blue) ===== -->
+  <!-- Waimea Canyon (west) -->
+  <circle cx="298" cy="388" r="11" fill="#0ea5e9" stroke="#fff" stroke-width="2.5"/>
+  <text x="298" y="372" font-size="12" text-anchor="middle" font-weight="700" fill="#0c4a6e">🏞️ Waimea Canyon</text>
+  <text x="298" y="420" font-size="10.5" text-anchor="middle" fill="#334155">Sun Jul 12</text>
+
+  <!-- Port Allen catamaran (south-west) -->
+  <circle cx="436" cy="645" r="11" fill="#0ea5e9" stroke="#fff" stroke-width="2.5"/>
+  <text x="436" y="675" font-size="12" text-anchor="middle" font-weight="700" fill="#0c4a6e">🛥️ Blue Dolphin Catamaran</text>
+  <text x="436" y="691" font-size="10.5" text-anchor="middle" fill="#334155">Port Allen · Wed Jul 8</text>
+
+  <!-- Lydgate Farms chocolate (east) -->
+  <circle cx="769" cy="384" r="11" fill="#0ea5e9" stroke="#fff" stroke-width="2.5"/>
+  <text x="769" y="368" font-size="12" text-anchor="middle" font-weight="700" fill="#0c4a6e">🍫 Lydgate Farms</text>
+  <text x="769" y="416" font-size="10.5" text-anchor="middle" fill="#334155">Thu Jul 9</text>
+
+  <!-- Wailua Marina luau + fern grotto (east) -->
+  <circle cx="839" cy="430" r="11" fill="#0ea5e9" stroke="#fff" stroke-width="2.5"/>
+  <text x="868" y="426" font-size="12" text-anchor="start" font-weight="700" fill="#0c4a6e">🌺 Smith Luau /</text>
+  <text x="868" y="442" font-size="12" text-anchor="start" font-weight="700" fill="#0c4a6e">🌿 Fern Grotto</text>
+  <text x="868" y="458" font-size="10.5" text-anchor="start" fill="#334155">Wailua · Jul 10 / Jul 6-7</text>
+
+  <!-- Kauai Backcountry tubing (Lihue) -->
+  <circle cx="800" cy="520" r="11" fill="#0ea5e9" stroke="#fff" stroke-width="2.5"/>
+  <text x="828" y="516" font-size="12" text-anchor="start" font-weight="700" fill="#0c4a6e">🛟 Mtn Tubing</text>
+  <text x="828" y="532" font-size="10.5" text-anchor="start" fill="#334155">Sat Jul 11</text>
+
+  <!-- ===== AIRPORT (purple) ===== -->
+  <rect x="824" y="556" width="26" height="26" rx="5" fill="#7c3aed" stroke="#fff" stroke-width="2.5"/>
+  <text x="837" y="574" font-size="15" text-anchor="middle">✈️</text>
+  <text x="837" y="603" font-size="12.5" text-anchor="middle" font-weight="800" fill="#5b21b6">LIH Airport</text>
+  <text x="837" y="619" font-size="10.5" text-anchor="middle" fill="#334155">Arrive/Depart + Air Tour</text>
+
+  <!-- ===== LODGING (red) ===== -->
+  <!-- Grand Hyatt Poipu -->
+  <path d="M 660 660 l 12 22 l -24 0 z" fill="#16a34a" stroke="#fff" stroke-width="2"/>
+  <circle cx="660" cy="665" r="9" fill="#16a34a" stroke="#fff" stroke-width="2.5"/>
+  <text x="660" y="712" font-size="12.5" text-anchor="middle" font-weight="800" fill="#166534">⭐ Grand Hyatt</text>
+  <text x="660" y="728" font-size="10.5" text-anchor="middle" fill="#334155">Poipu (south)</text>
+
+  <!-- Koloa Landing Poipu -->
+  <circle cx="600" cy="650" r="9" fill="#e11d48" stroke="#fff" stroke-width="2.5"/>
+  <text x="556" y="638" font-size="12" text-anchor="middle" font-weight="700" fill="#9f1239">🏨 Koloa Landing</text>
+
+  <!-- Timbers Kauai (Lihue/Hokuala) -->
+  <circle cx="846" cy="486" r="9" fill="#e11d48" stroke="#fff" stroke-width="2.5"/>
+  <text x="884" y="482" font-size="12" text-anchor="start" font-weight="700" fill="#9f1239">🏨 Timbers</text>
+  <text x="884" y="497" font-size="10.5" text-anchor="start" fill="#334155">Hokuala/Lihue</text>
+</svg>
+</div>
+
+<div class="legend">
+  <span><i class="dot act"></i> Scheduled activity</span>
+  <span><i class="dot air"></i> Airport (arrival/departure + air tour launch)</span>
+  <span><i class="dot lodge"></i> Lodging option</span>
+  <span>⭐/green = Kit's top pick</span>
+</div>
+
+<h1 style="font-size:19px;margin-top:24px;">🏨 Top 3 Lodging Options</h1>
+
+<div class="cards">
+  <div class="card best">
+    <span class="price">~$650-850/nt</span>
+    <h3>⭐ Grand Hyatt Kauai</h3>
+    <div class="loc">📍 Poipu (south shore) · ~25 min to airport</div>
+    <span class="tag">KIT'S PICK · best for resort chill</span>
+    <ul>
+      <li>1.5-acre saltwater lagoon + fantasy pool + 150-ft waterslide</li>
+      <li>Anara Spa (couples) + Camp Hyatt kids club</li>
+      <li>Walk to Shipwreck/Poipu Beach (sand + turtles)</li>
+      <li>Tidepools restaurant (overwater dining)</li>
+      <li>Sunny south side = best weather</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <span class="price">~$700/nt</span>
+    <h3>🏨 Koloa Landing Resort</h3>
+    <div class="loc">📍 Poipu (south shore) · ~25 min to airport</div>
+    <span class="tag" style="background:#e0f2fe;color:#075985;">villas + kitchen</span>
+    <ul>
+      <li>2-bedroom villas (sleeps 5, full kitchen + laundry)</li>
+      <li>350,000-gal saltwater pool + lagoons</li>
+      <li>Walk to Poipu Beach</li>
+      <li>Best if you want space + cook some meals</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <span class="price">~$1,500/nt</span>
+    <h3>🏨 Timbers Kauai</h3>
+    <div class="loc">📍 Hokuala / Lihue (east) · ~5 min to airport</div>
+    <span class="tag" style="background:#fef9c3;color:#854d0e;">luxury · closest to activities</span>
+    <ul>
+      <li>3-bed signature residences (everyone own room)</li>
+      <li>Closest to airport + Wailua activities (luau, tubing, chocolate)</li>
+      <li>Oceanfront golf resort, Hualani's restaurant</li>
+      <li>Priciest, but central to your east-side activity cluster</li>
+    </ul>
+  </div>
+</div>
+
+<div class="note">
+  💡 Most of your activities cluster on the EAST side (Lihue/Wailua: air tour, luau, tubing, chocolate, fern grotto) + SOUTH (Poipu beaches).
+  Catamaran is southwest (Port Allen), Waimea Canyon is far west. <br>
+  Poipu lodging (Grand Hyatt/Koloa) = ~25 min to airport but best beaches + sun. Lihue lodging (Timbers) = closest to most activities but less "beach resort" feel.
+</div>
+</div>
+</body>
+</html>
