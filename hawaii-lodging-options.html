@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hawaii 2026 - Lodging Decision Board</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f0f9ff; color:#0f172a; padding:14px; padding-bottom:60px; }
+  .wrap { max-width:920px; margin:0 auto; }
+  h1 { font-size:24px; text-align:center; }
+  .sub { text-align:center; color:#475569; font-size:14px; margin:4px 0 18px; }
+  .leg { margin:26px 0 10px; padding:10px 16px; border-radius:12px; font-weight:800; font-size:17px; color:#fff; }
+  .leg.k { background:linear-gradient(135deg,#16a34a,#15803d); }
+  .leg.h { background:linear-gradient(135deg,#dc2626,#b91c1c); }
+  .leg.o { background:linear-gradient(135deg,#0ea5e9,#0369a1); }
+  .leg small { display:block; font-weight:500; font-size:12.5px; opacity:.9; margin-top:2px; }
+
+  .card { background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(0,0,0,.07); margin:11px 0; padding:14px 16px; border-left:5px solid #cbd5e1; }
+  .card.lean { border-left-color:#16a34a; background:#f0fdf4; }
+  .card.out { border-left-color:#cbd5e1; opacity:.62; }
+  .card.decided { border-left-color:#0ea5e9; background:#eff6ff; }
+  .top { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap; }
+  .name { font-size:17px; font-weight:700; }
+  .price { font-size:16px; font-weight:800; color:#0f766e; white-space:nowrap; }
+  .badge { display:inline-block; font-size:11px; font-weight:700; border-radius:999px; padding:2px 9px; margin-left:6px; vertical-align:middle; }
+  .b-lean { background:#16a34a; color:#fff; }
+  .b-out { background:#e2e8f0; color:#64748b; }
+  .b-decided { background:#0ea5e9; color:#fff; }
+  .meta { font-size:13.5px; color:#475569; margin-top:7px; line-height:1.6; }
+  .meta b { color:#1e293b; }
+  .stars { color:#f59e0b; font-weight:700; }
+  .pro { color:#15803d; }
+  .con { color:#b91c1c; }
+
+  .budget { background:#1e293b; color:#e2e8f0; border-radius:14px; padding:18px 20px; margin:24px 0; }
+  .budget h3 { color:#fff; margin-bottom:10px; }
+  .budget .row { display:flex; justify-content:space-between; padding:3px 0; font-size:14px; border-bottom:1px solid #334155; }
+  .budget .row:last-child { border-bottom:none; font-weight:800; color:#34d399; margin-top:6px; }
+  .note { font-size:12px; color:#64748b; text-align:center; margin-top:16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>🏨 Hawaii Lodging Decision Board</h1>
+<div class="sub">All options we researched · July 6-21, 2026 · family of 5 · updated Jun 20</div>
+
+<!-- ============ KAUAI ============ -->
+<div class="leg k">🟢 LEG 1 · KAUAI (Jul 6-13, 7 nights)<small>Activity island - out most days, need space + location near activities</small></div>
+
+<div class="card lean">
+  <div class="top"><span class="name">💎 Timbers Kauai <span class="badge b-lean">LEANING</span></span><span class="price">$16,356</span></div>
+  <div class="meta">
+    <span class="stars">★ 4.8</span> · Lihue / Hokuala (east, 5 min to airport)<br>
+    <b>3-bedroom residence</b> (everyone own room) + full kitchen + laundry · newest (2018)<br>
+    <span class="pro">+ Closest to most activities (luau, tubing, chocolate, air tour)</span><br>
+    <span class="pro">+ Costco package: rental car INCLUDED + $977 Costco card</span><br>
+    <span class="con">- Modest pools · rocky east coast (not sandy) · priciest Kauai option</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top"><span class="name">🏝️ Koloa Landing Resort (2BR Villa)</span><span class="price">$13,565</span></div>
+  <div class="meta">
+    <span class="stars">★ 4.7</span> · Poipu (south, sunny + sandy beaches)<br>
+    2BR villa: King + Queen + sofa bed (sleeps 5-6) + kitchen<br>
+    <span class="pro">+ "Best Pool in America" (slides, falls, jacuzzis) · ~$1,700 cheaper all-in</span><br>
+    <span class="con">- Only 2BR (girls share) · NO car (keep Avis) · pool barely used (busy activity days)</span>
+  </div>
+</div>
+
+<div class="card out">
+  <div class="top"><span class="name">🏨 Marriott Waiohai / Kauai Lagoons <span class="badge b-out">RULED OUT</span></span><span class="price">~$13K</span></div>
+  <div class="meta">Timeshare units, 2BR (2 king + sofa). Waiohai showed sold-out direct; Kauai Lagoons was non-refundable + no car. Smaller/less ideal than Timbers.</div>
+</div>
+
+<!-- ============ HILO ============ -->
+<div class="leg h">🌋 LEG 2 · HILO / VOLCANO (Jul 13-16, 3 nights)<small>Sleep-only base - out adventuring all day (volcano, waterfalls)</small></div>
+
+<div class="card decided">
+  <div class="top"><span class="name">🏨 Grand Naniloa (DoubleTree) <span class="badge b-decided">DECIDED</span></span><span class="price">$2,601</span></div>
+  <div class="meta">
+    <span class="stars">★ 4.0</span> · Oceanfront Hilo Bay · <b>2 rooms</b> (King + 2 Queen)<br>
+    <span class="pro">+ Hilton brand (your Gold status) · $100 credit + 65,000 Hilton points · refundable · oceanfront · central to volcano/waterfalls</span><br>
+    Skipped the separate Volcano Village overnight (Volcano House dinner already covers the lava glow)
+  </div>
+</div>
+
+<!-- ============ KONA ============ -->
+<div class="leg o">🏖️ LEG 3 · KONA (Jul 16-21, 5 nights)<small>Resort-chill leg - here at the resort 3+ full days, amazing pools matter MOST</small></div>
+
+<div class="card lean">
+  <div class="top"><span class="name">🌺 Hilton Waikoloa Village <span class="badge b-lean">LEANING</span></span><span class="price">$7,527</span></div>
+  <div class="meta">
+    <span class="stars">★ 3.8</span> · Waikoloa Beach · <b>King + 2 Queen, GUARANTEED connecting</b>, Palace/Makai Tower (newest)<br>
+    <span class="pro">+ AMAZING pools - 3 pools, 175-ft slide, lazy river, dolphin lagoon, snorkel lagoon, boats/tram</span><br>
+    <span class="pro">+ Your Hilton Gold · guaranteed connecting · most fun for kids · saves $$</span><br>
+    <span class="con">- 3.8★ (huge/impersonal, walking distances) · saltwater lagoon NOT ocean swim beach · only 1 restaurant on-site</span><br>
+    <span style="color:#64748b;">Note: 600K Hilton points = poor value here (~0.32¢/pt), pay cash + save points. Dolphin Quest swim ~$250-350/pp (birthday idea for Adalyn!)</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top"><span class="name">💎 Four Seasons Hualalai <span class="badge" style="background:#fef3c7;color:#92400e;">DREAM PICK</span></span><span class="price">$19,667</span></div>
+  <div class="meta">
+    <span class="stars">★ 4.9</span> · Hualalai (pristine private beach) · 2 connecting King + sofa<br>
+    <span class="pro">+ Best resort in Hawaii · King's Pond (swim w/ rays + fish) · 7 pools · marine biologist snorkel lessons · kids club · stunning</span><br>
+    <span class="con">- ~$12K more than Hilton · NO day passes (guests only) · pushes budget over $50K if paired with Timbers</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top"><span class="name">💎 Fairmont Orchid</span><span class="price">$8,645-10,671</span></div>
+  <div class="meta">
+    <span class="stars">★ 4.7</span> · Kohala Coast (sandy beach + protected swim bay) · 2 rooms<br>
+    <span class="pro">+ Luxury/polished · breakfast options · refundable · huge pools, so many activities (hula, lei-making) · brown's beach house dining</span><br>
+    <span class="con">- Connecting rooms must match category + $75/night guarantee fee · "maybe too tranquil for 5 nights"</span><br>
+    <span style="color:#64748b;">$8,645 = mixed views · $10,671 = matched ocean views + connecting guarantee</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top"><span class="name">🏖️ Waikoloa Beach Marriott</span><span class="price">$8,371</span></div>
+  <div class="meta">
+    <span class="stars">★ 4.4</span> · Waikoloa Beach / A-Bay (sandy beach!) · 2 rooms (2 Queen + sofa each)<br>
+    <span class="pro">+ Sandy A-Bay beach (5-min walk) · zero-entry pool · Lava Lava Beach Club nearby · smaller/relaxed feel</span><br>
+    <span class="con">- "Not super luxury" · smallish calm pools · slide closes 5pm · loungers full midday · only 1 restaurant</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="top"><span class="name">🌺 Mauna Lani (Auberge)</span><span class="price">~$13-18K est</span></div>
+  <div class="meta">
+    <span class="stars">★ 4.7</span> · Kohala Coast · luxury, fully renovated 2020 (modern look)<br>
+    <span class="pro">+ Snorkeling, nice pools, "small but big," modern · luxury tier</span><br>
+    <span class="con">- Not yet priced for your dates · likely near Four Seasons money</span>
+  </div>
+</div>
+
+<div class="card out">
+  <div class="top"><span class="name">🏨 Royal Sea Cliff / Outrigger Keauhou <span class="badge b-out">PASSED</span></span><span class="price">$3,200-4,142</span></div>
+  <div class="meta">Royal Sea Cliff (Costco condo) - "didn't look luxurious," dated. Outrigger Keauhou - good kid pools + manta launch on-site, but lava-rock coast, didn't pursue.</div>
+</div>
+
+<!-- ============ BUDGET ============ -->
+<div class="budget">
+  <h3>💰 Budget Tracker (max $50,000)</h3>
+  <div class="row"><span>✈️ Flights (United, all 5)</span><span>~$6,500</span></div>
+  <div class="row"><span>🚗 Rental cars (both islands)</span><span>~$2,860</span></div>
+  <div class="row"><span>🎟️ 6 activities + Volcano House dinner</span><span>~$4,200</span></div>
+  <div class="row"><span>💎 Shaka card + misc committed</span><span>~$600</span></div>
+  <div class="row"><span>🌋 Hilo - Grand Naniloa</span><span>~$2,601</span></div>
+  <div class="row"><span>🟢 Kauai - Timbers (leaning)</span><span>~$16,356</span></div>
+  <div class="row"><span>🏖️ Kona - Hilton (leaning)</span><span>~$7,527</span></div>
+  <div class="row"><span>RUNNING TOTAL (leaning combo)</span><span>~$40,644</span></div>
+</div>
+<div class="note">Leaning combo (Timbers + Hilton) leaves ~$9,400 for food/extras/dolphin swim — comfortably under $50K.<br>
+Four Seasons Kona instead of Hilton would push ~$53K (over budget unless Kauai trades down).<br>
+Updated Jun 20, 2026 · 🦊</div>
+</div>
+</body>
+</html>
