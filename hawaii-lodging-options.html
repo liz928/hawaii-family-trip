@@ -45,6 +45,10 @@
   .lk-rev { background:#f1f5f9; color:#334155; }
   .gallery { margin-top:10px; display:flex; gap:6px; overflow-x:auto; padding-bottom:4px; }
   .gallery img { height:96px; border-radius:8px; flex-shrink:0; object-fit:cover; }
+  .legmap { background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(0,0,0,.06); margin:10px 0 4px; padding:8px; }
+  .legmap svg { width:100%; height:auto; display:block; }
+  .mlegend { font-size:11px; color:#475569; text-align:center; padding:4px 0 2px; }
+  .mlegend b.air { color:#7c3aed; } .mlegend b.lo { color:#e11d48; } .mlegend b.act { color:#0ea5e9; }
 </style>
 </head>
 <body>
@@ -54,6 +58,34 @@
 
 <!-- ============ KAUAI ============ -->
 <div class="leg k">🟢 LEG 1 · KAUAI (Jul 6-13, 7 nights)<small>Activity island - out most days, need space + location near activities</small></div>
+
+<div class="legmap">
+<svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="600" height="360" fill="#bae6fd" rx="10"/>
+  <!-- Kauai shape -->
+  <path d="M 180 70 C 280 45, 400 55, 470 100 C 525 140, 545 210, 510 270 C 470 325, 360 335, 270 315 C 180 295, 110 250, 95 180 C 85 130, 120 95, 180 70 Z" fill="#86efac" stroke="#15803d" stroke-width="2.5"/>
+  <text x="300" y="190" font-size="15" text-anchor="middle">⛰️</text>
+  <text x="150" y="110" font-size="13" text-anchor="middle">🏔️</text>
+  <text x="150" y="128" font-size="8.5" fill="#166534" text-anchor="middle">Na Pali</text>
+  <!-- Airport (east) -->
+  <rect x="455" y="205" width="20" height="20" rx="4" fill="#7c3aed" stroke="#fff" stroke-width="2"/>
+  <text x="465" y="220" font-size="11" text-anchor="middle">✈️</text>
+  <text x="465" y="245" font-size="10" font-weight="700" fill="#5b21b6" text-anchor="middle">LIH Airport</text>
+  <!-- Timbers (Lihue/east, by airport) -->
+  <circle cx="440" cy="180" r="8" fill="#e11d48" stroke="#fff" stroke-width="2"/>
+  <text x="440" y="168" font-size="10" font-weight="700" fill="#9f1239" text-anchor="middle">💎 Timbers (east)</text>
+  <!-- Outrigger (Lihue/Wailua, just N of airport) -->
+  <circle cx="460" cy="150" r="8" fill="#e11d48" stroke="#fff" stroke-width="2"/>
+  <text x="545" y="150" font-size="10" font-weight="700" fill="#9f1239" text-anchor="end">🌴 Outrigger</text>
+  <!-- Koloa Landing (Poipu, south) -->
+  <circle cx="330" cy="300" r="8" fill="#e11d48" stroke="#fff" stroke-width="2"/>
+  <text x="330" y="325" font-size="10" font-weight="700" fill="#9f1239" text-anchor="middle">🏝️ Koloa Landing (Poipu/south)</text>
+  <!-- a couple activity dots -->
+  <circle cx="250" cy="200" r="5" fill="#0ea5e9"/><text x="250" y="190" font-size="8.5" text-anchor="middle" fill="#0c4a6e">Waimea Cyn</text>
+  <circle cx="430" cy="130" r="5" fill="#0ea5e9"/><text x="430" y="120" font-size="8.5" text-anchor="middle" fill="#0c4a6e">Wailua (luau/tubing)</text>
+</svg>
+<div class="mlegend"><b class="air">■ LIH Airport</b> · <b class="lo">● Hotels</b> · <b class="act">● Activities</b> — Timbers/Outrigger = east (near airport+activities) · Koloa = sunny south/Poipu</div>
+</div>
 
 <div class="card lean">
   <div class="top"><span class="name">💎 Timbers Kauai <span class="badge b-lean">LEANING</span></span><span class="price">$16,356</span></div>
@@ -110,6 +142,28 @@
 <!-- ============ HILO ============ -->
 <div class="leg h">🌋 LEG 2 · HILO / VOLCANO (Jul 13-16, 3 nights)<small>Sleep-only base - out adventuring all day (volcano, waterfalls)</small></div>
 
+<div class="legmap">
+<svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="600" height="380" fill="#bae6fd" rx="10"/>
+  <!-- Big Island shape -->
+  <path d="M 180 60 C 290 40, 410 70, 470 130 C 520 180, 525 250, 480 305 C 430 350, 320 350, 240 320 C 150 285, 95 220, 110 150 C 120 100, 140 72, 180 60 Z" fill="#fcd9a8" stroke="#b45309" stroke-width="2.5"/>
+  <text x="230" y="230" font-size="16" text-anchor="middle">🌋</text>
+  <text x="230" y="248" font-size="8.5" fill="#7c2d12" text-anchor="middle">Volcano NP</text>
+  <text x="300" y="150" font-size="14" text-anchor="middle">⛰️</text><text x="300" y="166" font-size="8" fill="#7c2d12" text-anchor="middle">Mauna Kea</text>
+  <!-- ITO airport (Hilo, east) -->
+  <rect x="450" y="150" width="20" height="20" rx="4" fill="#7c3aed" stroke="#fff" stroke-width="2"/>
+  <text x="460" y="165" font-size="11" text-anchor="middle">✈️</text>
+  <text x="460" y="190" font-size="10" font-weight="700" fill="#5b21b6" text-anchor="middle">ITO (Hilo) arrive</text>
+  <!-- Grand Naniloa (Hilo Bay, east) -->
+  <circle cx="470" cy="125" r="8" fill="#0ea5e9" stroke="#fff" stroke-width="2"/>
+  <text x="470" y="113" font-size="10" font-weight="700" fill="#075985" text-anchor="middle">🏨 Grand Naniloa (Hilo Bay) ✅</text>
+  <!-- waterfalls + black sand -->
+  <circle cx="430" cy="95" r="5" fill="#16a34a"/><text x="390" y="90" font-size="8.5" text-anchor="middle" fill="#166534">waterfalls</text>
+  <text x="150" y="300" font-size="9" fill="#7c2d12" text-anchor="middle">(Kona/west → next leg)</text>
+</svg>
+<div class="mlegend"><b class="air">■ ITO Airport</b> · <b style="color:#0ea5e9;">● Grand Naniloa</b> — oceanfront Hilo Bay, central to volcano + waterfalls (east side). DECIDED ✅</div>
+</div>
+
 <div class="card decided">
   <div class="top"><span class="name">🏨 Grand Naniloa (DoubleTree) <span class="badge b-decided">DECIDED</span></span><span class="price">$2,601</span></div>
   <div class="meta">
@@ -126,6 +180,30 @@
 
 <!-- ============ KONA ============ -->
 <div class="leg o">🏖️ LEG 3 · KONA (Jul 16-21, 5 nights)<small>Resort-chill leg - here at the resort 3+ full days, amazing pools matter MOST</small></div>
+
+<div class="legmap">
+<svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="600" height="380" fill="#bae6fd" rx="10"/>
+  <!-- Big Island shape -->
+  <path d="M 180 60 C 290 40, 410 70, 470 130 C 520 180, 525 250, 480 305 C 430 350, 320 350, 240 320 C 150 285, 95 220, 110 150 C 120 100, 140 72, 180 60 Z" fill="#fcd9a8" stroke="#b45309" stroke-width="2.5"/>
+  <text x="300" y="210" font-size="15" text-anchor="middle">⛰️</text>
+  <!-- KOA airport (Kona, west) -->
+  <rect x="120" y="150" width="20" height="20" rx="4" fill="#7c3aed" stroke="#fff" stroke-width="2"/>
+  <text x="130" y="165" font-size="11" text-anchor="middle">✈️</text>
+  <text x="130" y="190" font-size="10" font-weight="700" fill="#5b21b6" text-anchor="middle">KOA (Kona) depart</text>
+  <!-- Kohala Coast cluster (NW): Hilton Waikoloa, Fairmont, Four Seasons, Marriott, Mauna Lani -->
+  <circle cx="160" cy="110" r="7" fill="#e11d48" stroke="#fff" stroke-width="2"/>
+  <text x="185" y="100" font-size="9.5" font-weight="700" fill="#9f1239" text-anchor="start">🌺 Hilton Waikoloa</text>
+  <circle cx="150" cy="128" r="6" fill="#fb7185" stroke="#fff" stroke-width="1.5"/>
+  <text x="175" y="132" font-size="9" fill="#9f1239" text-anchor="start">Fairmont · 4 Seasons</text>
+  <text x="175" y="145" font-size="9" fill="#9f1239" text-anchor="start">Marriott · Mauna Lani</text>
+  <text x="150" y="88" font-size="8.5" fill="#7c2d12" text-anchor="middle">Kohala Coast (sunny, sandy)</text>
+  <!-- Keauhou/south Kona -->
+  <circle cx="140" cy="205" r="5" fill="#94a3b8"/><text x="140" y="222" font-size="8.5" fill="#475569" text-anchor="middle">Keauhou (manta launch)</text>
+  <text x="430" y="120" font-size="9" fill="#7c2d12" text-anchor="middle">(Hilo/east ← prev leg)</text>
+</svg>
+<div class="mlegend"><b class="air">■ KOA Airport</b> · <b class="lo">● Hotels</b> — all Kona resorts cluster on the sunny <b>Kohala Coast</b> (NW). Manta launch is Keauhou (south).</div>
+</div>
 
 <div class="card lean">
   <div class="top"><span class="name">🌺 Hilton Waikoloa Village <span class="badge b-lean">LEANING</span></span><span class="price">$7,527</span></div>
