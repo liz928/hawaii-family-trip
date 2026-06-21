@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Hawaii 2026 - Lodging Decision Board</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -54,6 +55,30 @@
 </style>
 </head>
 <body>
+<div id="kit-gate" style="position:fixed;inset:0;z-index:99999;background:#0f172a;display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <div style="font-size:42px;margin-bottom:6px;">🔒</div>
+  <div style="color:#e2e8f0;font-size:17px;font-weight:700;margin-bottom:4px;">Private - Zhou Family</div>
+  <div style="color:#94a3b8;font-size:13px;margin-bottom:18px;">Enter passcode</div>
+  <input id="kit-pin" type="tel" inputmode="numeric" maxlength="8" placeholder="••••" style="font-size:24px;letter-spacing:8px;text-align:center;width:160px;padding:12px;border-radius:12px;border:2px solid #334155;background:#1e293b;color:#fff;outline:none;">
+  <div id="kit-err" style="color:#f87171;font-size:13px;height:18px;margin-top:10px;"></div>
+  <button id="kit-go" style="margin-top:6px;background:#0ea5e9;color:#fff;border:none;font-size:15px;font-weight:600;padding:10px 28px;border-radius:10px;cursor:pointer;">Unlock</button>
+</div>
+<script>
+(function(){
+  var CODE="0706", KEY="zhouTripUnlock";
+  function unlock(){document.getElementById("kit-gate").style.display="none";}
+  if(localStorage.getItem(KEY)==="1"){unlock();}
+  function tryPin(){
+    var v=document.getElementById("kit-pin").value.trim();
+    if(v===CODE){localStorage.setItem(KEY,"1");unlock();}
+    else{document.getElementById("kit-err").textContent="Wrong passcode";}
+  }
+  document.getElementById("kit-go").addEventListener("click",tryPin);
+  document.getElementById("kit-pin").addEventListener("keydown",function(e){if(e.key==="Enter")tryPin();});
+  document.getElementById("kit-pin").focus();
+})();
+</script>
+
 <div class="wrap">
 <h1>🏨 Hawaii Lodging Decision Board</h1>
 <div class="sub">All options we researched · July 6-21, 2026 · family of 5 · updated Jun 20</div>
