@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Hawaii Day-Trip Kit 🎒</title>
+<style>
+  :root { --teal:#14b8a6; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    margin:0; background:linear-gradient(160deg,#ecfeff,#f0fdfa); color:var(--ink); padding:18px; }
+  .wrap { max-width:680px; margin:0 auto; }
+  h1 { font-size:26px; margin:6px 0 2px; }
+  .sub { color:var(--muted); font-size:14px; margin-bottom:14px; }
+  .bar { background:#fff; border-radius:14px; padding:12px 16px; box-shadow:0 2px 10px rgba(0,0,0,.05);
+    display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; position:sticky; top:8px; z-index:5; }
+  .bar .count { font-weight:800; color:var(--teal); }
+  .bar button { background:#f1f5f9; border:none; border-radius:8px; padding:7px 12px; font-size:13px; font-weight:600; color:#475569; cursor:pointer; }
+  .sec { background:#fff; border-radius:16px; padding:14px 16px 8px; margin:0 0 14px; box-shadow:0 3px 14px rgba(0,0,0,.06); }
+  .sec h2 { font-size:17px; margin:2px 0 10px; display:flex; align-items:center; gap:8px; }
+  .item { display:flex; align-items:flex-start; gap:11px; padding:9px 0; border-bottom:1px dashed var(--line); font-size:15px; line-height:1.35; }
+  .item:last-child { border-bottom:none; }
+  .item input { width:21px; height:21px; accent-color:var(--teal); flex-shrink:0; margin-top:1px; }
+  .item label { flex:1; cursor:pointer; }
+  .item.done label { text-decoration:line-through; color:#94a3b8; }
+  .star { color:#ef4444; font-weight:800; }
+  .note { font-size:12.5px; color:var(--muted); }
+  .pri { background:linear-gradient(135deg,#fff7ed,#ffedd5); border:2px solid #fdba74; }
+  .pri h2 { color:#c2410c; }
+  .day { background:linear-gradient(135deg,#eff6ff,#dbeafe); border:2px solid #93c5fd; }
+  .day h2 { color:#1d4ed8; }
+  footer { text-align:center; color:#94a3b8; font-size:12px; margin:18px 0; }
+  @media print {
+    body { background:#fff; padding:0; }
+    .bar button { display:none; }
+    .sec, .bar { box-shadow:none; border:1px solid #ddd; break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🎒 Hawaii Day-Trip Kit</h1>
+  <div class="sub">Stock the North Face daypack · family of 5 · <span class="star">★</span> = don't-skip essentials</div>
+
+  <div class="bar">
+    <div><span class="count" id="count">0</span> <span style="color:#64748b;font-size:13px">of <span id="total">0</span> packed</span></div>
+    <div>
+      <button onclick="window.print()">🖨️ Print</button>
+      <button onclick="resetAll()">↺ Reset</button>
+    </div>
+  </div>
+
+  <div class="sec pri">
+    <h2>⭐ The 5 Non-Negotiables</h2>
+    <div class="item"><input type="checkbox"><label><span class="star">★</span> Reef-safe sunscreen <span class="note">(Hawaii law - no oxybenzone/octinoxate; SPF 30-50)</span></label></div>
+    <div class="item"><input type="checkbox"><label><span class="star">★</span> Dramamine <span class="note">(Bobby + boat trips: Blue Dolphin, manta snorkel)</span></label></div>
+    <div class="item"><input type="checkbox"><label><span class="star">★</span> Kids' allergy med <span class="note">(all 3 kids - seasonal allergies)</span></label></div>
+    <div class="item"><input type="checkbox"><label><span class="star">★</span> Tweezers <span class="note">(sea urchin spines, coral, splinters)</span></label></div>
+    <div class="item"><input type="checkbox"><label><span class="star">★</span> Phone dry bag / waterproof pouch <span class="note">(boat + snorkel days)</span></label></div>
+  </div>
+
+  <div class="sec">
+    <h2>🩹 First Aid Pouch</h2>
+    <div class="item"><input type="checkbox"><label>Bandages (assorted + waterproof)</label></div>
+    <div class="item"><input type="checkbox"><label>Antibiotic ointment (Neosporin)</label></div>
+    <div class="item"><input type="checkbox"><label>Antiseptic wipes + gauze pads</label></div>
+    <div class="item"><input type="checkbox"><label>Kids' + adult pain/fever relief (Tylenol/Motrin packets)</label></div>
+    <div class="item"><input type="checkbox"><label>Anti-itch cream (hydrocortisone)</label></div>
+    <div class="item"><input type="checkbox"><label>Aloe gel (sunburn)</label></div>
+    <div class="item"><input type="checkbox"><label>Electrolyte packets (Liquid IV / LMNT)</label></div>
+    <div class="item"><input type="checkbox"><label>Blister moleskin <span class="note">(lots of walking)</span></label></div>
+  </div>
+
+  <div class="sec">
+    <h2>☀️ Sun &amp; Heat</h2>
+    <div class="item"><input type="checkbox"><label>Sunscreen stick for faces (kids)</label></div>
+    <div class="item"><input type="checkbox"><label>SPF lip balm</label></div>
+    <div class="item"><input type="checkbox"><label>Sunglasses</label></div>
+    <div class="item"><input type="checkbox"><label>Hat(s)</label></div>
+    <div class="item"><input type="checkbox"><label>Cooling towel</label></div>
+  </div>
+
+  <div class="sec">
+    <h2>💧 Hydration &amp; Snacks</h2>
+    <div class="item"><input type="checkbox"><label>2 reusable water bottles <span class="note">(side pockets)</span></label></div>
+    <div class="item"><input type="checkbox"><label>Adalyn's dairy-free/GF snacks <span class="note">(Thrive bars, fruit/nut packs)</span></label></div>
+    <div class="item"><input type="checkbox"><label>Family snacks (trail mix, fruit pouches for Andrew)</label></div>
+  </div>
+
+  <div class="sec">
+    <h2>🏖️ Beach &amp; Snorkel</h2>
+    <div class="item"><input type="checkbox"><label>Quick-dry microfiber towel</label></div>
+    <div class="item"><input type="checkbox"><label>Ziploc / dry bag for valuables</label></div>
+    <div class="item"><input type="checkbox"><label>Wet wipes + hand sanitizer</label></div>
+    <div class="item"><input type="checkbox"><label>Small trash bag (pack out)</label></div>
+    <div class="item"><input type="checkbox"><label>Anti-fog spray for snorkel masks <span class="note">(or baby shampoo)</span></label></div>
+    <div class="item"><input type="checkbox"><label>Rash guards reminder (kids' skin)</label></div>
+  </div>
+
+  <div class="sec day">
+    <h2>📋 Day-Specific Add-Ons</h2>
+    <div class="item"><input type="checkbox"><label>🪼 <b>Manta night (Jul 18):</b> light jacket, towel, Dramamine, dry bag</label></div>
+    <div class="item"><input type="checkbox"><label>🌋 <b>Volcano day:</b> warm layers (cool/rainy up there), flashlight, closed shoes</label></div>
+    <div class="item"><input type="checkbox"><label>🛟 <b>Tubing (Jul 11):</b> water shoes, change of clothes (headlamp provided)</label></div>
+    <div class="item"><input type="checkbox"><label>🛩️ <b>Air tour (Jul 7):</b> light snack, Dramamine if sensitive</label></div>
+  </div>
+
+  <footer>Hawaii 2026 · Zhou family · 🦊 Kit</footer>
+</div>
+
+<script>
+  const KEY='hawaii-daytrip-kit-v1';
+  const boxes=[...document.querySelectorAll('.item input')];
+  document.getElementById('total').textContent=boxes.length;
+  function save(){ localStorage.setItem(KEY, JSON.stringify(boxes.map(b=>b.checked))); }
+  function refresh(){
+    let n=0;
+    boxes.forEach(b=>{ b.closest('.item').classList.toggle('done',b.checked); if(b.checked)n++; });
+    document.getElementById('count').textContent=n;
+  }
+  function load(){
+    try{ const s=JSON.parse(localStorage.getItem(KEY)||'[]'); boxes.forEach((b,i)=>b.checked=!!s[i]); }catch(e){}
+    refresh();
+  }
+  boxes.forEach(b=>b.addEventListener('change',()=>{save();refresh();}));
+  window.resetAll=function(){ if(confirm('Uncheck everything?')){ boxes.forEach(b=>b.checked=false); save(); refresh(); } };
+  load();
+</script>
+</body>
+</html>
