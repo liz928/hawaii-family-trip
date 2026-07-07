@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Hawaii 2026 - Zhou Family</name>
+  <description>Excursions, hotels + key spots. Jul 6-21, 2026. Kauai = blue, Big Island = red, Hotels = green.</description>
+
+  <!-- STYLES -->
+  <Style id="kauai"><IconStyle><color>ffff7800</color><Icon><href>http://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href></Icon></IconStyle></Style>
+  <Style id="bigisland"><IconStyle><color>ff0000ff</color><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-blank.png</href></Icon></IconStyle></Style>
+  <Style id="hotel"><IconStyle><color>ff00aa00</color><Icon><href>http://maps.google.com/mapfiles/kml/shapes/lodging.png</href></Icon></IconStyle></Style>
+  <Style id="airport"><IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href></Icon></IconStyle></Style>
+
+  <!-- ===== KAUAI (Jul 6-13) ===== -->
+  <Folder>
+    <name>KAUAI (Jul 6-13)</name>
+
+    <Placemark>
+      <name>🏨 Timbers Kauai (our stay)</name>
+      <description>Check-in Mon Jul 6, 4 PM. 3BR residence. 855-420-9225. Conf C494049858.</description>
+      <styleUrl>#hotel</styleUrl>
+      <address>3770 Alaoli Way, Lihue, HI 96766</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🛩️ Air Ventures - Kauai Air Tour</name>
+      <description>Tue Jul 7, 11:30 AM (check-in 11 AM). 866-464-7864. Lihue commuter terminal.</description>
+      <styleUrl>#kauai</styleUrl>
+      <address>3745 Ahukini Road, Lihue, HI 96766</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🛥️ Blue Dolphin - Na Pali Snorkel</name>
+      <description>Wed Jul 8, 8:00 AM check-in. Port Allen. 808-335-5553.</description>
+      <styleUrl>#kauai</styleUrl>
+      <address>4353 Waialo Rd 7B, Eleele, HI 96705</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🌺 Smith Family Garden Luau</name>
+      <description>Fri Jul 10. Wailua Marina. 808-821-6895. Conf 8994962.</description>
+      <styleUrl>#kauai</styleUrl>
+      <address>Wailua Marina, 5971 Kuhio Hwy, Kapaa, HI 96746</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🛟 Kauai Backcountry Mountain Tubing</name>
+      <description>Sat Jul 11, 2:20 PM. 808-245-2506.</description>
+      <styleUrl>#kauai</styleUrl>
+      <address>3-4131 Kuhio Highway, Lihue, HI 96766</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🏞️ Waimea Canyon (Sun Jul 12)</name>
+      <description>Scenic drive day - the "Grand Canyon of the Pacific."</description>
+      <styleUrl>#kauai</styleUrl>
+      <address>Waimea Canyon State Park, Waimea, HI 96796</address>
+    </Placemark>
+
+    <Placemark>
+      <name>✈️ Lihue Airport (LIH)</name>
+      <description>Arrival Jul 6 + inter-island departure Jul 13 (3:45 PM to Hilo).</description>
+      <styleUrl>#airport</styleUrl>
+      <address>3901 Mokulele Loop, Lihue, HI 96766</address>
+    </Placemark>
+  </Folder>
+
+  <!-- ===== BIG ISLAND (Jul 13-21) ===== -->
+  <Folder>
+    <name>BIG ISLAND (Jul 13-21)</name>
+
+    <Placemark>
+      <name>🏨 Grand Naniloa Hilo (Jul 13-16)</name>
+      <description>DoubleTree. Check-in Mon Jul 13. Conf 92099268. Oceanfront.</description>
+      <styleUrl>#hotel</styleUrl>
+      <address>93 Banyan Drive, Hilo, HI 96720</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🏨 Hilton Waikoloa Village (Jul 16-21)</name>
+      <description>Check-in Thu Jul 16. Conf 3489932160. Kona Pool 175-ft slide.</description>
+      <styleUrl>#hotel</styleUrl>
+      <address>69-425 Waikoloa Beach Drive, Waikoloa Village, HI 96738</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🌋 Volcano House - The Rim (dinner)</name>
+      <description>Tue Jul 14, 6:00 PM. Crater-view dinner. 808-930-6910. Party of 5.</description>
+      <styleUrl>#bigisland</styleUrl>
+      <address>1 Crater Rim Drive, Hawaii National Park, HI 96718</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🍦 Hawaiian Vanilla Co. - Farm Luncheon</name>
+      <description>Thu Jul 16, 12:30 PM. Flag GF/dairy-free for Adalyn. 808-776-1771.</description>
+      <styleUrl>#bigisland</styleUrl>
+      <address>43-2007 Paauilo Mauka Road, Paauilo, HI 96776</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🪼 Anelakai - Manta Ray Night Snorkel</name>
+      <description>Sat Jul 18, 9:00 PM. Keauhou Bay boat ramp. Conf 355082896.</description>
+      <styleUrl>#bigisland</styleUrl>
+      <address>78-7130 Kaleiopapa St, Kailua-Kona, HI 96740</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🌌 Mauna Kea Visitor Center (stargazing)</name>
+      <description>Self-drive, FREE. Bring warm layers - it's cold at elevation!</description>
+      <styleUrl>#bigisland</styleUrl>
+      <address>Mauna Kea Visitor Information Station, Hilo, HI 96720</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🗿 Pu'uhonua o Honaunau (Place of Refuge)</name>
+      <description>Fri Jul 17. National Historical Park.</description>
+      <styleUrl>#bigisland</styleUrl>
+      <address>Puuhonua O Honaunau National Historical Park, Honaunau, HI 96726</address>
+    </Placemark>
+
+    <Placemark>
+      <name>🍽️ Lava Lava Beach Club (finale dinner)</name>
+      <description>Mon Jul 20. Toes-in-sand sunset dinner. Book ~2 wks out.</description>
+      <styleUrl>#bigisland</styleUrl>
+      <address>69-1081 Kuualii Place, Waikoloa Village, HI 96738</address>
+    </Placemark>
+
+    <Placemark>
+      <name>✈️ Kona Airport (KOA)</name>
+      <description>Departure home Tue Jul 21, 8:00 PM (overnight to Denver).</description>
+      <styleUrl>#airport</styleUrl>
+      <address>73-200 Kupipi St, Kailua-Kona, HI 96740</address>
+    </Placemark>
+
+    <Placemark>
+      <name>✈️ Hilo Airport (ITO)</name>
+      <description>Arrival from Kauai Jul 13, 6:10 PM. Thrifty car pickup here.</description>
+      <styleUrl>#airport</styleUrl>
+      <address>2450 Kekuanaoa St, Hilo, HI 96720</address>
+    </Placemark>
+  </Folder>
+
+</Document>
+</kml>
