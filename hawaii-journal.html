@@ -3,166 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hawaii 2026 — Family Trip Journal</title>
+<title>Hawaii 2026 — Trip Journal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital@0;1&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#2b2723;
-    --soft:#6f6659;
-    --line:#e2dbd0;
-    --bg:#f7f3ec;
-    --card:#fffdf9;
-    --accent:#7d6548;
-    --sea:#3d6b6b;
+    --ink:#1a1a1a;
+    --muted:#8a8a8a;
+    --faint:#b8b8b8;
+    --line:#ececec;
+    --bg:#ffffff;
+    --accent:#c2593a;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{
     background:var(--bg);
     color:var(--ink);
-    font-family:'EB Garamond',Georgia,serif;
-    line-height:1.7;
-    font-size:19px;
+    font-family:'Inter',-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    font-weight:400;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:720px;margin:0 auto;padding:56px 28px 90px;}
+  .wrap{max-width:640px;margin:0 auto;padding:0 26px 100px;}
 
-  header.masthead{text-align:center;margin-bottom:54px;}
-  .kicker{
-    font-family:'Jost',sans-serif;
-    text-transform:uppercase;
-    letter-spacing:.32em;
-    font-size:12px;
-    font-weight:400;
-    color:var(--soft);
-    margin-bottom:20px;
+  /* Masthead */
+  header.top{padding:70px 0 0;margin-bottom:70px;}
+  .eyebrow{
+    font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:26px;
   }
   h1{
-    font-family:'Cormorant Garamond',serif;
-    font-weight:600;
-    font-size:52px;
-    line-height:1.05;
-    letter-spacing:.5px;
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:60px;
+    line-height:1;
+    letter-spacing:-1.5px;
+    margin-bottom:22px;
   }
-  .dateline{
-    font-family:'EB Garamond',serif;
-    font-style:italic;
-    font-size:20px;
-    color:var(--soft);
-    margin-top:14px;
+  .meta{
+    font-size:14px;color:var(--muted);font-weight:400;
+    letter-spacing:.02em;
   }
-  .rule{
-    width:64px;height:1px;background:var(--accent);
-    margin:30px auto 0;opacity:.6;
-  }
+  .meta span{color:var(--ink);}
 
-  article{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:4px;
-    padding:40px 42px;
-    margin-bottom:34px;
-    box-shadow:0 1px 2px rgba(0,0,0,.03);
+  /* Day entries */
+  .entry{padding-top:52px;border-top:1px solid var(--line);margin-top:52px;}
+  .entry:first-of-type{border-top:none;margin-top:0;padding-top:0;}
+  .daymark{
+    display:flex;align-items:baseline;gap:14px;margin-bottom:6px;
   }
-  .day-num{
-    font-family:'Jost',sans-serif;
-    text-transform:uppercase;
-    letter-spacing:.28em;
-    font-size:11px;
-    color:var(--accent);
-    margin-bottom:10px;
+  .dnum{
+    font-family:'Fraunces',serif;
+    font-size:15px;font-weight:600;color:var(--accent);
+    font-variant-numeric:tabular-nums;
+  }
+  .ddate{
+    font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--faint);
   }
   h2{
-    font-family:'Cormorant Garamond',serif;
-    font-weight:600;
-    font-size:33px;
-    line-height:1.15;
-    margin-bottom:4px;
+    font-family:'Fraunces',serif;
+    font-weight:500;font-size:32px;line-height:1.15;letter-spacing:-.5px;
+    margin-bottom:28px;
   }
-  h3{
-    font-family:'Cormorant Garamond',serif;
-    font-weight:500;
-    font-style:italic;
-    font-size:22px;
-    color:var(--sea);
-    margin-bottom:22px;
-    font-weight:500;
+  .entry p{margin-bottom:20px;color:#2e2e2e;}
+  .entry p:last-child{margin-bottom:0;}
+
+  /* Inline label runs */
+  .tag{
+    display:block;
+    font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:3px;
   }
-  article p{margin-bottom:17px;}
-  article p:last-child{margin-bottom:0;}
-  .lead::first-letter{
-    font-family:'Cormorant Garamond',serif;
-    font-size:58px;
-    line-height:.8;
-    float:left;
-    padding:8px 10px 0 0;
-    color:var(--accent);
-    font-weight:600;
+  b,strong{font-weight:600;color:var(--ink);}
+  a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:1px;}
+  a:hover{color:var(--accent);}
+  .aside{
+    font-size:15px;color:var(--muted);font-style:italic;
+    border-left:2px solid var(--line);padding-left:16px;margin:24px 0;
   }
-  b, strong{font-weight:600;color:#413a31;}
-  a{color:var(--sea);text-decoration:none;border-bottom:1px solid rgba(61,107,107,.35);}
-  a:hover{border-bottom-color:var(--sea);}
-  .note{
-    font-style:italic;
-    color:var(--soft);
-    font-size:16px;
-  }
-  .divider{
-    text-align:center;
-    color:var(--accent);
-    letter-spacing:.5em;
-    margin:2px 0 0;
-    opacity:.5;
-    font-size:14px;
-  }
+  .tbc{color:var(--faint);font-size:13px;font-style:italic;}
+
   footer{
-    text-align:center;
-    font-family:'Jost',sans-serif;
-    text-transform:uppercase;
-    letter-spacing:.25em;
-    font-size:11px;
-    color:var(--soft);
-    margin-top:40px;
+    margin-top:70px;padding-top:30px;border-top:1px solid var(--line);
+    text-align:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--faint);
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <header class="masthead">
-    <div class="kicker">A Family Travel Journal</div>
-    <h1>Hawaii 2026</h1>
-    <div class="dateline">The Zhou Family &middot; July 6&ndash;21, 2026<br>Kaua&#699;i to the Big Island</div>
-    <div class="rule"></div>
+  <header class="top">
+    <div class="eyebrow">Family Travel Journal</div>
+    <h1>Hawai&#699;i<br>2026</h1>
+    <div class="meta">The Zhou Family &nbsp;·&nbsp; <span>July 6&ndash;21, 2026</span> &nbsp;·&nbsp; Kaua&#699;i &rarr; the Big Island</div>
   </header>
 
-  <article>
-    <div class="day-num">Day One &middot; Monday, July 6</div>
+  <!-- DAY 1 -->
+  <section class="entry">
+    <div class="daymark"><span class="dnum">01</span><span class="ddate">Monday, July 6</span></div>
     <h2>Arrival on Kaua&#699;i</h2>
-    <h3>The long way to paradise</h3>
-    <p class="lead">The getting-here day. A rough start &mdash; a four-hour delay in Denver stretched an already-long journey, and this came just after all three children had recovered from COVID the week before. Everyone rallied only just in time.</p>
-    <p>We finally landed at Lihu&#699;e around 6:45 in the evening, collected the car, and settled into our three-bedroom residence at Timbers Kaua&#699;i.</p>
-    <p>For dinner we kept things simple and ordered takeout from <a href="https://www.google.com/maps/search/?api=1&query=Hualani%27s%20Restaurant%20Timbers%20Kauai%20Lihue">Hualani&rsquo;s Restaurant</a>, the oceanfront, farm-to-table restaurant at the resort &mdash; a calm close to a very long travel day.</p>
-  </article>
+    <p>The getting-here day. A rough start &mdash; a four-hour delay in Denver stretched an already-long journey, and this came just after all three children had recovered from COVID the week before. Everyone rallied only just in time.</p>
+    <p>We landed at Lihu&#699;e around 6:45 in the evening, collected the car, and settled into our three-bedroom residence at Timbers Kaua&#699;i.</p>
+    <p>For dinner we kept things simple and ordered takeout from <a href="https://www.google.com/maps/search/?api=1&query=Hualani%27s%20Restaurant%20Timbers%20Kauai%20Lihue">Hualani&rsquo;s</a>, the oceanfront, farm-to-table restaurant at the resort &mdash; a calm close to a very long day of travel.</p>
+  </section>
 
-  <article>
-    <div class="day-num">Day Two &middot; Tuesday, July 7</div>
-    <h2>Chocolate, Snow Cones &amp; the Pool</h2>
-    <h3>A quiet, well-earned day</h3>
-    <p class="lead">A well-earned slow day. The Air Ventures air tour was postponed to Thursday for aircraft maintenance, which turned today into a proper settle-in and recovery day.</p>
-    <p>We woke to rain, but it cleared quickly before we left the house, giving way to a sunny afternoon in the upper eighties.</p>
-    <p>Breakfast was at <a href="https://www.google.com/maps/search/?api=1&query=Tip%20Top%20Cafe%20Lihue%20Kauai">Tip Top Caf&eacute;</a> in Lihu&#699;e &mdash; a wonderful spot, and a generous start to the day. Annabelle had the oxtail soup and rated it a perfect ten. Highly recommended.</p>
-    <p>From there we visited the <a href="https://www.google.com/maps/search/?api=1&query=Lydgate%20Chocolate%20Tasting%20Room%20Kapaa">Lydgate Chocolate Tasting Room</a> in downtown Kapa&#699;a. The tasting was lovely; our only wish was that we could have done the full farm tour so the children might better understand how chocolate is actually made. For today, though, this was just right &mdash; perhaps we&rsquo;ll have that fuller experience when we travel to Costa Rica later. We brought home some chocolate as a souvenir.</p>
-    <p>A few doors down we found a snow cone shop &mdash; everyone&rsquo;s favorite stop of the day. Annabelle chose the root beer float, which became the whole family&rsquo;s favorite; the pi&ntilde;a colada was a touch too sweet. Andrew and Adalyn each picked their own flavors. <span class="note">(Shop name to be confirmed for a map link.)</span></p>
-    <p>We also made a run to <a href="https://www.google.com/maps/search/?api=1&query=Costco%20Lihue%20Kauai">Costco</a> in Lihu&#699;e to stock the residence for the week &mdash; breakfast items, fruit, and snacks for the children and the pool days ahead.</p>
-    <p>In the afternoon we explored both pools &mdash; the one just outside our room and the infinity pool by the lobby and restaurant &mdash; and the children preferred the pool in front of our room. It was heated and felt wonderful. The keiki jumping rock was the highlight of the day: roughly an eight-foot jump into five feet of water. Annabelle stayed close to help Andrew reach the side at first, but by the end he was jumping and swimming to the stairs entirely on his own. Poolside, we enjoyed pi&ntilde;a coladas and truffle fries.</p>
-    <p>For dinner we tried <a href="https://www.google.com/maps/search/?api=1&query=Hawaii%20Sushi%20Station%20food%20truck%20Kauai">Hawaii Sushi Station</a>, a food truck. The fish was fresh, though the portions were not especially generous; the flavor was good and the salad dressing excellent, if a little spicy for the amount served. Having had a large breakfast, a few snacks, and poolside fries, we had skipped lunch altogether and made this our dinner.</p>
-    <p>A closing note for the day: Adalyn and Andrew built Andrew a third bed on the floor between their two beds &mdash; a pile of pillows under a blanket &mdash; and that is where he insisted on sleeping tonight.</p>
-  </article>
+  <!-- DAY 2 -->
+  <section class="entry">
+    <div class="daymark"><span class="dnum">02</span><span class="ddate">Tuesday, July 7</span></div>
+    <h2>Chocolate, snow cones, and the pool</h2>
+    <p>A well-earned slow day. The air tour was postponed to Thursday for aircraft maintenance, which turned today into a proper settle-in and recovery day. We woke to rain, but it cleared quickly before we left the house, giving way to a sunny afternoon in the upper eighties.</p>
 
-  <div class="divider">&bull; &bull; &bull;</div>
-  <footer>The journal continues each day</footer>
+    <p><span class="tag">Breakfast</span>A generous start at <a href="https://www.google.com/maps/search/?api=1&query=Tip%20Top%20Cafe%20Lihue%20Kauai">Tip Top Caf&eacute;</a> in Lihu&#699;e. Annabelle had the oxtail soup and rated it a perfect ten &mdash; highly recommended.</p>
+
+    <p><span class="tag">Chocolate</span>We visited the <a href="https://www.google.com/maps/search/?api=1&query=Lydgate%20Chocolate%20Tasting%20Room%20Kapaa">Lydgate Chocolate Tasting Room</a> in downtown Kapa&#699;a. The tasting was lovely; our only wish was that we could have done the full farm tour, so the children might better understand how chocolate is actually made. For today, this was just right &mdash; perhaps we&rsquo;ll have that fuller experience when we travel to Costa Rica later. We brought home some chocolate as a souvenir.</p>
+
+    <p><span class="tag">Snow cones</span>A few doors down we found a snow cone shop &mdash; everyone&rsquo;s favorite stop of the day. Annabelle chose the root beer float, which became the whole family&rsquo;s favorite; the pi&ntilde;a colada was a touch too sweet. Andrew and Adalyn each picked their own flavors. <span class="tbc">Shop name to be confirmed.</span></p>
+
+    <p><span class="tag">Provisions</span>We made a run to <a href="https://www.google.com/maps/search/?api=1&query=Costco%20Lihue%20Kauai">Costco</a> in Lihu&#699;e to stock the residence for the week &mdash; breakfast items, fruit, and snacks for the children and the pool days ahead.</p>
+
+    <p><span class="tag">The pool</span>We explored both pools &mdash; the one just outside our room and the infinity pool by the lobby &mdash; and the children preferred the pool in front of our room. It was heated and felt wonderful. The keiki jumping rock was the highlight: roughly an eight-foot jump into five feet of water. Annabelle stayed close to help Andrew reach the side at first, but by the end he was jumping and swimming to the stairs entirely on his own. Poolside, pi&ntilde;a coladas and truffle fries.</p>
+
+    <p><span class="tag">Dinner</span>We tried <a href="https://www.google.com/maps/search/?api=1&query=Hawaii%20Sushi%20Station%20food%20truck%20Kauai">Hawaii Sushi Station</a>, a food truck. The fish was fresh, though the portions were not especially generous; the flavor was good and the salad dressing excellent, if a little spicy for the amount served. Having had a large breakfast, a few snacks, and poolside fries, we skipped lunch altogether and made this our dinner.</p>
+
+    <p class="aside">Adalyn and Andrew built Andrew a third bed on the floor between their two beds &mdash; a pile of pillows under a blanket &mdash; and that is where he insisted on sleeping tonight.</p>
+  </section>
+
+  <footer>The journal continues</footer>
 
 </div>
 </body>
