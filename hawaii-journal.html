@@ -3,128 +3,174 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hawaii 2026 — Trip Journal</title>
+<title>Hawaii 2026 — Family Trip Journal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital@0;1&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1a1a1a;
-    --muted:#8a8a8a;
-    --faint:#b8b8b8;
-    --line:#ececec;
-    --bg:#ffffff;
-    --accent:#c2593a;
+    --ink:#2b2723;
+    --soft:#6f6659;
+    --line:#e2dbd0;
+    --bg:#f7f3ec;
+    --card:#fffdf9;
+    --accent:#7d6548;
+    --sea:#3d6b6b;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{
     background:var(--bg);
     color:var(--ink);
-    font-family:'Inter',-apple-system,sans-serif;
-    font-size:17px;
-    line-height:1.75;
-    font-weight:400;
+    font-family:'EB Garamond',Georgia,serif;
+    line-height:1.7;
+    font-size:19px;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:640px;margin:0 auto;padding:0 26px 100px;}
+  .wrap{max-width:720px;margin:0 auto;padding:56px 28px 90px;}
 
-  header.top{padding:70px 0 0;margin-bottom:70px;}
-  .eyebrow{
-    font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--accent);margin-bottom:26px;
+  header.masthead{text-align:center;margin-bottom:54px;}
+  .kicker{
+    font-family:'Jost',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.32em;
+    font-size:12px;
+    font-weight:400;
+    color:var(--soft);
+    margin-bottom:20px;
   }
   h1{
-    font-family:'Fraunces',serif;
-    font-weight:500;
-    font-size:60px;
-    line-height:1;
-    letter-spacing:-1.5px;
-    margin-bottom:22px;
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:52px;
+    line-height:1.05;
+    letter-spacing:.5px;
   }
-  .meta{
-    font-size:14px;color:var(--muted);font-weight:400;
-    letter-spacing:.02em;
+  .dateline{
+    font-family:'EB Garamond',serif;
+    font-style:italic;
+    font-size:20px;
+    color:var(--soft);
+    margin-top:14px;
   }
-  .meta span{color:var(--ink);}
+  .rule{width:64px;height:1px;background:var(--accent);margin:30px auto 0;opacity:.6;}
 
-  .entry{padding-top:52px;border-top:1px solid var(--line);margin-top:52px;}
-  .entry:first-of-type{border-top:none;margin-top:0;padding-top:0;}
-  .daymark{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;}
-  .dnum{
-    font-family:'Fraunces',serif;
-    font-size:15px;font-weight:600;color:var(--accent);
-    font-variant-numeric:tabular-nums;
+  article{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:40px 42px;
+    margin-bottom:34px;
+    box-shadow:0 1px 2px rgba(0,0,0,.03);
   }
-  .ddate{
-    font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--faint);
+  .day-num{
+    font-family:'Jost',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.28em;
+    font-size:11px;
+    color:var(--accent);
+    margin-bottom:10px;
   }
   h2{
-    font-family:'Fraunces',serif;
-    font-weight:500;font-size:32px;line-height:1.15;letter-spacing:-.5px;
-    margin-bottom:28px;
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:33px;
+    line-height:1.15;
+    margin-bottom:4px;
   }
-  .entry p{margin-bottom:20px;color:#2e2e2e;}
-  .entry p:last-child{margin-bottom:0;}
+  h3{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:22px;
+    color:var(--sea);
+    margin-bottom:22px;
+  }
+  article p{margin-bottom:17px;}
+  article p:last-child{margin-bottom:0;}
+  .lead::first-letter{
+    font-family:'Cormorant Garamond',serif;
+    font-size:58px;
+    line-height:.8;
+    float:left;
+    padding:8px 10px 0 0;
+    color:var(--accent);
+    font-weight:600;
+  }
   .tag{
+    font-family:'Jost',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    font-size:11px;
+    color:var(--accent);
     display:block;
-    font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--muted);margin-bottom:3px;
+    margin-bottom:2px;
   }
-  b,strong{font-weight:600;color:var(--ink);}
-  a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:1px;}
-  a:hover{color:var(--accent);}
+  b, strong{font-weight:600;color:#413a31;}
+  a{color:var(--sea);text-decoration:none;border-bottom:1px solid rgba(61,107,107,.35);}
+  a:hover{border-bottom-color:var(--sea);}
   .aside{
-    font-size:15px;color:var(--muted);font-style:italic;
-    border-left:2px solid var(--line);padding-left:16px;margin:24px 0;
+    font-style:italic;
+    color:var(--soft);
+    border-left:2px solid var(--line);
+    padding-left:18px;
+    margin-top:20px;
   }
+  .divider{text-align:center;color:var(--accent);letter-spacing:.5em;margin:2px 0 0;opacity:.5;font-size:14px;}
   footer{
-    margin-top:70px;padding-top:30px;border-top:1px solid var(--line);
-    text-align:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--faint);
+    text-align:center;
+    font-family:'Jost',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.25em;
+    font-size:11px;
+    color:var(--soft);
+    margin-top:40px;
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <header class="top">
-    <div class="eyebrow">Family Travel Journal</div>
-    <h1>Hawai&#699;i<br>2026</h1>
-    <div class="meta">The Zhou Family &nbsp;·&nbsp; <span>July 6&ndash;21, 2026</span> &nbsp;·&nbsp; Kaua&#699;i &rarr; the Big Island</div>
+  <header class="masthead">
+    <div class="kicker">A Family Travel Journal</div>
+    <h1>Hawai&#699;i 2026</h1>
+    <div class="dateline">The Zhou Family &middot; July 6&ndash;21, 2026<br>Kaua&#699;i to the Big Island</div>
+    <div class="rule"></div>
   </header>
 
   <!-- DAY 1 -->
-  <section class="entry">
-    <div class="daymark"><span class="dnum">01</span><span class="ddate">Monday, July 6</span></div>
+  <article>
+    <div class="day-num">Day One &middot; Monday, July 6</div>
     <h2>Arrival on Kaua&#699;i</h2>
-    <p>Travel day. It was a long one &mdash; a four-hour delay in Denver on top of an already-long haul, and this was right after all three kids had just gotten over COVID the week before. Everyone rallied just in time.</p>
+    <h3>The long way to paradise</h3>
+    <p class="lead">Travel day, and it was a long one &mdash; a four-hour delay in Denver on top of an already-long haul, and this was right after all three kids had just gotten over COVID the week before. Everyone rallied just in time.</p>
     <p>We landed in Lihu&#699;e around 6:45, grabbed the car, and got settled into our three-bedroom place at Timbers Kaua&#699;i.</p>
     <p>We kept dinner easy and ordered takeout from <a href="https://www.google.com/maps/search/?api=1&query=Hualani%27s%20Restaurant%20Timbers%20Kauai%20Lihue">Hualani&rsquo;s</a>, the oceanfront restaurant right at the resort. A nice, quiet end to a very long day.</p>
-  </section>
+  </article>
 
   <!-- DAY 2 -->
-  <section class="entry">
-    <div class="daymark"><span class="dnum">02</span><span class="ddate">Tuesday, July 7</span></div>
-    <h2>Chocolate, shave ice, and the pool</h2>
-    <p>A slow day, and we needed it. The air tour got bumped to Thursday for aircraft maintenance, so today turned into a settle-in and recovery day. We woke up to rain, but it cleared out fast before we left the house &mdash; sunny and upper 80s the rest of the day.</p>
+  <article>
+    <div class="day-num">Day Two &middot; Tuesday, July 7</div>
+    <h2>Chocolate, Shave Ice &amp; the Pool</h2>
+    <h3>A slow day, and we needed it</h3>
+    <p class="lead">The air tour got bumped to Thursday for aircraft maintenance, so today turned into a settle-in and recovery day. We woke up to rain, but it cleared out fast before we left the house &mdash; sunny and upper 80s the rest of the day.</p>
 
     <p><span class="tag">Breakfast</span>A big breakfast at <a href="https://www.google.com/maps/search/?api=1&query=Tip%20Top%20Cafe%20Lihue%20Kauai">Tip Top Caf&eacute;</a> in Lihu&#699;e. Annabelle had the oxtail soup and gave it a 10 out of 10 &mdash; highly recommend.</p>
 
     <p><span class="tag">Chocolate</span>We stopped at the <a href="https://www.google.com/maps/search/?api=1&query=Lydgate%20Chocolate%20Tasting%20Room%20Kapaa">Lydgate Chocolate Tasting Room</a> in downtown Kapa&#699;a. The tasting was great &mdash; I just wish we could have done the full farm tour so the kids could really see how it&rsquo;s made. This was fine for now; maybe we&rsquo;ll do the full thing when we go to Costa Rica later. We bought some chocolate to bring home.</p>
 
-    <p><span class="tag">Shave ice</span>A few doors down we found <a href="https://www.google.com/maps/search/?api=1&query=Honu%20Shave%20Ice%20Kapaa">Honu Shave Ice</a> &mdash; everyone&rsquo;s favorite stop of the day. Annabelle got the root beer float one and it was the whole family&rsquo;s favorite. The pi&ntilde;a colada was a little too sweet. Andrew and Adalyn just picked their favorite flavors.</p>
+    <p><span class="tag">Shave Ice</span>A few doors down we found <a href="https://www.google.com/maps/search/?api=1&query=Honu%20Shave%20Ice%20Kapaa">Honu Shave Ice</a> &mdash; everyone&rsquo;s favorite stop of the day. Annabelle got the root beer float one and it was the whole family&rsquo;s favorite. The pi&ntilde;a colada was a little too sweet. Andrew and Adalyn just picked their favorite flavors.</p>
 
     <p><span class="tag">Provisions</span>Annabelle and I did a <a href="https://www.google.com/maps/search/?api=1&query=Costco%20Lihue%20Kauai">Costco</a> run to stock the place for the week while Bobby took the little ones back to rest, then got them an early start at the pool.</p>
 
-    <p><span class="tag">The pool</span>We checked out both pools &mdash; the one right outside our room and the infinity pool by the lobby &mdash; and the kids liked the one in front of our room best. It was heated and felt great. The keiki jumping rock was the big hit: about an eight-foot jump into five feet of water. Annabelle stayed close to help Andrew get to the side at first, but by the end he was jumping and swimming to the stairs all by himself. Poolside pi&ntilde;a coladas and truffle fries didn&rsquo;t hurt either.</p>
+    <p><span class="tag">The Pool</span>We checked out both pools &mdash; the one right outside our room and the infinity pool by the lobby &mdash; and the kids liked the one in front of our room best. It was heated and felt great. The keiki jumping rock was the big hit: about an eight-foot jump into five feet of water. Annabelle stayed close to help Andrew get to the side at first, but by the end he was jumping and swimming to the stairs all by himself. Poolside pi&ntilde;a coladas and truffle fries didn&rsquo;t hurt either.</p>
 
     <p><span class="tag">Dinner</span>We tried <a href="https://www.google.com/maps/search/?api=1&query=Hawaii%20Sushi%20Station%20food%20truck%20Kauai">Hawaii Sushi Station</a>, a food truck. The fish was fresh and the flavor was good, and the salad dressing was great (a little spicy for the amount you got). Honestly it felt a bit pricey for how much you actually got. We&rsquo;d had a big breakfast plus Costco snacks and the poolside fries, so we skipped lunch and just made this dinner.</p>
 
     <p class="aside">Adalyn and Andrew built Andrew a third bed on the floor between their two beds &mdash; a pile of pillows with a blanket over it &mdash; and that&rsquo;s where he insisted on sleeping tonight.</p>
-  </section>
+  </article>
 
-  <footer>The journal continues</footer>
+  <div class="divider">&bull; &bull; &bull;</div>
+  <footer>The journal continues each day</footer>
 
 </div>
 </body>
