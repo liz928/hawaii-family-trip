@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adalyn's Slushie Bar</title>
+<style>
+  :root{
+    --berry:#e0347a; --berry-deep:#a81259; --pink-soft:#ffe3f0;
+    --aqua:#22b8cf; --sun:#ffd43b; --ink:#3a2230; --mute:#8a6f80; --card:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:linear-gradient(160deg,#fff5fa 0%,#ffe3f0 40%,#e3f9ff 100%);
+    color:var(--ink); line-height:1.6; padding:0 0 60px;}
+  header{text-align:center; padding:36px 20px 28px;
+    background:linear-gradient(135deg,var(--berry) 0%,var(--aqua) 120%);
+    color:#fff; border-radius:0 0 30px 30px; box-shadow:0 8px 28px rgba(224,52,122,.25);}
+  header .ico{font-size:2.4rem;}
+  header h1{font-size:1.9rem; font-weight:800; margin:6px 0 2px;}
+  header .sub{font-size:1rem; opacity:.95;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 16px;}
+  h2{font-size:1.3rem; font-weight:800; color:var(--berry-deep); margin:30px 0 12px; display:flex; align-items:center; gap:8px;}
+  .card{background:var(--card); border-radius:18px; padding:18px 20px; margin:14px 0;
+    box-shadow:0 4px 16px rgba(168,18,89,.08); border:1px solid #ffd9e9;}
+  .card.hi{border:2px solid var(--berry); box-shadow:0 6px 20px rgba(224,52,122,.15);}
+  .card h3{font-size:1.12rem; font-weight:800; margin-bottom:6px;}
+  .card .tag{display:inline-block; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.4px;
+    background:var(--pink-soft); color:var(--berry-deep); padding:3px 10px; border-radius:11px; margin-bottom:8px;}
+  ol.steps{padding-left:20px; margin:6px 0;}
+  ol.steps li{margin:5px 0; font-size:.95rem;}
+  ul.ing{list-style:none; padding:0; margin:8px 0;}
+  ul.ing li{padding:5px 0 5px 26px; position:relative; font-size:.95rem; border-bottom:1px dashed #ffe0ee;}
+  ul.ing li:before{content:"🧊"; position:absolute; left:0; font-size:.85rem;}
+  .df{display:inline-block; background:#d3f9d8; color:#2b8a3e; font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:10px;}
+  .note{background:#fff9db; border-left:4px solid var(--sun); border-radius:8px; padding:11px 14px; font-size:.88rem; margin:10px 0;}
+  .warn{background:#ffe3e3; border-left:4px solid #fa5252; border-radius:8px; padding:11px 14px; font-size:.88rem; margin:10px 0;}
+  .btnrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
+  .chip{background:var(--pink-soft); color:var(--berry-deep); padding:5px 12px; border-radius:13px; font-size:.82rem; font-weight:700;}
+  .foot{text-align:center; color:var(--mute); font-size:.82rem; margin-top:30px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="ico">🍧🥤🍓</div>
+  <h1>Adalyn's Slushie Bar</h1>
+  <div class="sub">ICEMAN 64 oz Slushie Machine</div>
+</header>
+
+<div class="wrap">
+
+  <!-- HOW TO USE -->
+  <h2>🧊 How to Use the Machine</h2>
+  <div class="card hi">
+    <ol class="steps">
+      <li><b>Pour your mix</b> into the top container — stop at the <b>max fill line</b> (~48 oz). It expands as it churns.</li>
+      <li>Tap <b>⏻ Power</b> to wake it up.</li>
+      <li>Tap <b>🥤 Slushy</b> mode (or 🍹 Cocktail works too).</li>
+      <li>Set <b>Thickness</b> with ➖ ➕ — start in the <b>middle</b>. More bars = thicker/icier.</li>
+      <li>Tap <b>▶️ Play</b> to start.</li>
+      <li>Wait <b>~30–60 min</b> until it's slushy.</li>
+      <li>Dispense from the <b>front spout</b>. Enjoy! 🥳</li>
+      <li>After: run <b>Defrost / Clean</b>, then wash the parts.</li>
+    </ol>
+  </div>
+  <div class="warn">⚠️ <b>The #1 rule:</b> the mix needs <b>enough sugar</b> to turn slushy. Too little sugar = it freezes into a solid brick and the motor struggles. Don't make it "too healthy" — the sweetness helps it work!</div>
+
+  <!-- PINA COLADA -->
+  <h2>🍍 Virgin Piña Colada</h2>
+  <div class="card hi">
+    <span class="tag">The first one!</span> <span class="df">Dairy-Free ✓</span>
+    <h3>Full batch (64 oz machine)</h3>
+    <ul class="ing">
+      <li>3 cups pineapple juice (100%)</li>
+      <li>1½ cups canned coconut milk (full-fat)</li>
+      <li>⅔ cup cream of coconut (Coco López) — <b>the slush-maker!</b></li>
+      <li>3–4 Tbsp sugar or simple syrup (only if juice is tart)</li>
+      <li>Optional: a squeeze of lime</li>
+    </ul>
+    <p style="font-size:.9rem;color:var(--mute);margin-top:6px;">Blend smooth → pour in → Slushy mode → medium thickness → ~30–60 min. Makes <b>6–8 kid cups</b>.</p>
+    <div class="note">🥥 Naturally dairy-free for Adalyn — coconut milk + cream of coconut, no dairy. (Coco López is DF — just check the label.)</div>
+  </div>
+
+  <!-- TUNING -->
+  <h2>🎯 Perfect-It Cheat Sheet</h2>
+  <div class="card">
+    <ul class="ing">
+      <li><b>Freezing too solid / not moving?</b> → needs more sugar. Add cream of coconut or simple syrup.</li>
+      <li><b>Too watery / won't thicken?</b> → more cream of coconut, less juice. Raise thickness a notch.</li>
+      <li><b>Too icy?</b> → lower the thickness setting next batch.</li>
+      <li><b>Not creamy enough?</b> → more coconut milk.</li>
+      <li><b>Too sweet?</b> → more pineapple juice + a squeeze of lime.</li>
+    </ul>
+    <div class="note">💡 First batch: make it <b>slightly sweeter</b> than you think. Under-sweet is what makes the machine struggle. Once you nail it, write down your ratio!</div>
+  </div>
+
+  <!-- LEFTOVERS -->
+  <h2>♻️ Leftover Slush?</h2>
+  <div class="card">
+    <ul class="ing">
+      <li><b>Fridge (easiest):</b> pour into a jar, keeps 2–3 days. It melts to liquid — just pour back in + re-churn. Shake first if it separated.</li>
+      <li><b>Freeze:</b> pour into a container or ice cube trays. Thaw → re-churn, OR blend the frozen cubes for instant slush.</li>
+    </ul>
+    <p style="font-size:.9rem;color:var(--mute);">Nothing wasted — the mix is forgiving. 🌴</p>
+  </div>
+
+  <!-- MORE FLAVORS -->
+  <h2>🌈 More Flavors to Try</h2>
+
+  <div class="card">
+    <span class="tag">Strawberry</span> <span class="df">Dairy-Free ✓</span>
+    <h3>🍓 Strawberry Slush</h3>
+    <ul class="ing">
+      <li>3 cups lemon-lime soda OR white grape juice</li>
+      <li>2 cups frozen strawberries, thawed + mashed (or 1½ cups strawberry purée)</li>
+      <li>3–4 Tbsp sugar or simple syrup</li>
+      <li>Squeeze of lemon</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <span class="tag">Mango</span> <span class="df">Dairy-Free ✓</span>
+    <h3>🥭 Mango Slush</h3>
+    <ul class="ing">
+      <li>2 cups mango nectar/juice</li>
+      <li>1½ cups mango purée (blended frozen mango)</li>
+      <li>1 cup pineapple or orange juice</li>
+      <li>3 Tbsp sugar or simple syrup + squeeze of lime</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <span class="tag">Blue Raspberry</span> <span class="df">Dairy-Free ✓</span>
+    <h3>💙 Blue Raspberry Slush</h3>
+    <ul class="ing">
+      <li>4½ cups blue raspberry lemonade or juice</li>
+      <li>3–4 Tbsp sugar (if not already sweet)</li>
+      <li>Squeeze of lemon to balance</li>
+    </ul>
+    <p style="font-size:.86rem;color:var(--mute);">Classic snow-cone vibes — kids love the color. 💙</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">Cherry Limeade</span> <span class="df">Dairy-Free ✓</span>
+    <h3>🍒 Cherry Limeade Slush</h3>
+    <ul class="ing">
+      <li>3 cups limeade</li>
+      <li>1½ cups cherry juice</li>
+      <li>2–3 Tbsp sugar + fresh lime squeeze</li>
+    </ul>
+  </div>
+
+  <div class="note">🧊 <b>All flavors:</b> aim for ~48 oz total liquid, keep them on the sweeter side so they slush, pour to the max line, run Slushy mode ~30–60 min.</div>
+
+  <div class="foot">Made with 💗 for Adalyn's slushie adventures</div>
+</div>
+</body>
+</html>
