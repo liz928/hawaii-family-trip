@@ -64,6 +64,16 @@
   .note{background:#fef9c3; border-left:4px solid #f59e0b; border-radius:8px; padding:10px 14px; font-size:.86rem; margin:10px 0;}
   .foot{text-align:center; color:var(--mute); font-size:.82rem; margin-top:34px;}
   .heart{color:var(--pink);}
+  details.shop{margin-top:6px;}
+  details.shop summary{
+    list-style:none; cursor:pointer; font-size:1.35rem; font-weight:800; color:var(--pink-deep);
+    display:flex; align-items:center; gap:9px; padding:6px 0;
+  }
+  details.shop summary::-webkit-details-marker{display:none;}
+  details.shop summary .em{font-size:1.4rem;}
+  details.shop summary .chev{margin-left:auto; font-size:1rem; color:var(--mute); transition:transform .2s;}
+  details.shop[open] summary .chev{transform:rotate(180deg);}
+  details.shop summary .tap{font-size:.72rem; font-weight:700; color:var(--mute); background:var(--pink-soft); padding:3px 10px; border-radius:12px; text-transform:uppercase; letter-spacing:.4px;}
 </style>
 </head>
 <body>
@@ -285,8 +295,9 @@
   </div>
 
   <!-- SHOPPING LIST -->
-  <h2><span class="em">🛒</span> Shopping List</h2>
-  <p class="lede">Tap each button → add faves to your Amazon list. Order 2 sizes where noted, return what doesn't fit. Order by Thu/Fri for Monday arrival.</p>
+  <details class="shop">
+  <summary><span class="em">🛒</span> Shopping List <span class="tap">tap to open</span><span class="chev">▾</span></summary>
+  <p class="lede" style="margin-top:12px;">Tap each button → add faves to your Amazon list. Order 2 sizes where noted, return what doesn't fit. Order by Thu/Fri for Monday arrival.</p>
 
   <div class="card hi">
     <h3>💗 For You (Liz)</h3>
@@ -326,6 +337,7 @@
   </div>
 
   <div class="note">⚠️ <b>Order 2 sizes</b> of jeans, tops + Adalyn's boots → free Prime returns. <b>Order by Thu/Fri</b> for Monday arrival. <b>Backup comfy shoes in the car</b> for all 3 girls. <b>Ball Arena bags:</b> wallet-size only (4x6x1.5").</div>
+  </details>
 
   <!-- HOTELS -->
   <h2><span class="em">🏨</span> Where to Stay (Hilton)</h2>
